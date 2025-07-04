@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>कार्यकर्ता लॉगिन - श्री स्वामी समर्थ मित्र मंडळ</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f9f3e9;
+            text-align: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ff9933;
+            color: white;
+            padding: 10px;
+        }
+
+        .logo {
+            width: 120px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        nav {
+            background: #cc7a00;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd699;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #cc7a00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff9933;
+        }
+
+        a.form-link {
+            display: block;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #cc7a00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.form-link:hover {
+            color: #ff9933;
+        }
+
+        footer {
+            background: #ff9933;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/swami_logo-removebg-preview.png" alt="मंडळ लोगो" class="logo">
+        <h1>श्री स्वामी समर्थ मित्र मंडळ</h1>
+        <h4>नोंदणी क्र. - Maha.741/2003/Pune</h4>
+        <h3>स्थापना - १३ जून २००३</h3>
+    </header>
+
+    <nav>
+        <a href="index-marathi.html">मुख्य पृष्ठ</a>
+        <a href="about-marathi.html">आमच्याबद्दल</a>
+        <a href="gallery-marathi.html">गॅलरी</a>
+        <a href="contact-marathi.html">संपर्क व देणगी</a>
+        <a href="internal-marathi.html">कार्यकर्ता लॉगिन</a>
+    </nav>
+
+    <div class="container" id="login-box">
+        <h2>प्रवेश कोड टाका</h2>
+        <input type="password" id="accessCode" placeholder="पासवर्ड टाका">
+        <br>
+        <button onclick="checkPassword()">सबमिट करा</button>
+    </div>
+
+    <div class="container" id="form-links" style="display: none;">
+        <h2>२०२५ साठी फॉर्म्स</h2>
+        <a class="form-link" href="https://forms.gle/QnQzCDJRQm1u6nqm7" target="_blank">वर्गणी/देणगी २०२५ अर्ज</a>
+        <a class="form-link" href="https://forms.gle/RexZgH51ThH3fm1J8" target="_blank">खर्च २०२५ अर्ज</a>
+    </div>
+
+    <footer>
+        &copy; २००३ - २०२५ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
+    </footer>
+
+    <script>
+        function checkPassword() {
+            const code = document.getElementById("accessCode").value;
+            // Change this code to your actual password
+            if (code === "mandal123") {
+                document.getElementById("login-box").style.display = "none";
+                document.getElementById("form-links").style.display = "block";
+            } else {
+                alert("चुकीचा पासवर्ड. कृपया पुन्हा प्रयत्न करा.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

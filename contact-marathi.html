@@ -1,23 +1,106 @@
 <!DOCTYPE html>
 <html lang="mr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>संपर्क व देणगी - श्री स्वामी समर्थ मित्र मंडळ</title>
   <style>
-    body {font-family: sans-serif; margin:0; background:#f9f3e9;}
-    header {background: #ff9933; color: white; padding: 20px; text-align: center;}
-    nav {background: #cc7a00; padding: 10px; text-align: center;}
-    nav a {color: white; margin: 0 15px; text-decoration: none; font-weight: bold;}
-    section {padding: 30px;}
-    footer {background: #ff9933; color: white; text-align: center; padding: 15px;}
-    .logo {width: 150px; display: block; margin: 0 auto 20px;}
-    .contact-card, .donate-card, .social-card {
-      background-color: #fff; padding: 20px; border-radius: 10px; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.1); max-width: 600px; margin: 20px auto;
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: #f9f3e9;
+    }
+
+    header {
+      background: #ff9933;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background: #cc7a00;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd699;
+      transform: scale(1.1);
+    }
+
+    section {
+      padding: 30px;
+    }
+
+    footer {
+      background: #ff9933;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .logo {
+      width: 150px;
+      display: block;
+      margin: 0 auto 20px;
+    }
+
+    .contact-card,
+    .donate-card,
+    .social-card,
+    .check-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .qr-image {
+      width: 400px;
+      display: block;
+      margin: 10px auto;
+    }
+
+    #receiptInput {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #cc7a00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff9933;
+    }
+
+    #resultBox {
+      margin-top: 20px;
+      text-align: left;
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -30,43 +113,82 @@
     <a href="about-marathi.html">आमच्याबद्दल</a>
     <a href="gallery-marathi.html">गॅलरी</a>
     <a href="contact-marathi.html">संपर्क व देणगी</a>
-    <a href="contact.html" style="float:right;">English</a>
+    <a href="internal.html">कार्यकर्ता लॉगिन</a>
   </nav>
 
   <section>
     <div class="contact-card">
       <h2>आमच्याशी संपर्क साधा</h2>
       <p><strong>पत्ता:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">श्री स्वामी समर्थ मित्र मंडळ, सुम्ब्रेनगर, वाकी खुर्द, तालुका खेड, जिल्हा पुणे, 410501</a>.</p>
-      <p><strong>मोबाइल:</strong> <a href="tel:7057705792">7057705792</a></p>
-      <p><strong>व्हॉट्सअॅप:</strong> <a href="https://wa.me/917057705792" target="_blank">व्हॉट्सअॅपवर चॅट करा</a></p>
+      <p><strong>मोबाईल:</strong> <a href="tel:7397874647">7057705792</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">WhatsApp वर संपर्क करा</a></p>
       <p><strong>ई-मेल:</strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
     </div>
 
     <div class="donate-card">
-      <h2>आमच्या मंडळाला समर्थन द्या</h2>
+      <h2>आमच्या मंडळाला पाठिंबा द्या</h2>
       <p>
-        आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीपूर्ण आणि समाजोपयोगी उपक्रम आयोजित करण्यास मदत करते. आमच्या मिशनसाठी आपला पाठिंबा दिल्याबद्दल धन्यवाद!
+        आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीमय व सामाजिक उपक्रम आयोजित करण्यात मदत करते. आपल्या सहकार्याबद्दल धन्यवाद!
       </p>
-      <p><strong>देणगीसाठी बँक तपशील:</strong></p>
+      <p><strong>बँक तपशील:</strong></p>
       <p>
-        बँक नाव: XYZ बँक<br>
-        खाते नाव: श्री स्वामी समर्थ मित्र मंडळ<br>
-        खाते क्रमांक: 1234567890<br>
-        IFSC कोड: XYZB0000123<br>
-        शाखा: पुणे मुख्य शाखा
+        खातेदाराचे नाव: श्री गौरव अनिल शेटे<br>
+        खाते क्रमांक: 157057705792<br>
+        IFSC कोड: INDB0000829<br>
+        बँक नाव: इंडसइंड बँक<br>
+        शाखा: चाकण, 0829, 410501
       </p>
+      <p><strong>UPI ID:</strong> shreeswamisamarth@indie</p>
+      <p><strong>QR स्कॅन करा व देणगी द्या:</strong></p>
+      <img src="images/vargani_qr.jpeg" alt="देणगी QR कोड" class="qr-image">
+    </div>
+
+    <div class="check-card">
+      <h2>तुमची देणगी तपासा</h2>
+      <input type="text" id="receiptInput" placeholder="पावती क्रमांक टाका">
+      <br>
+      <button onclick="checkReceipt()">तपासा</button>
+      <div id="resultBox"></div>
     </div>
 
     <div class="social-card">
       <h2>आम्हाला फॉलो करा</h2>
-      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr" target="_blank">इंस्टाग्राम</a></p>
-      <!-- येथे इतर सोशल लिंक्स देखील जोडू शकता -->
+      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr" target="_blank">Instagram</a></p>
     </div>
   </section>
 
   <footer>
-    &copy; २००३ - २०२५ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
+    &copy; 2003 - 2025 श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
   </footer>
 
+  <script>
+    function checkReceipt() {
+      var receipt = document.getElementById("receiptInput").value;
+      var resultBox = document.getElementById("resultBox");
+      resultBox.innerHTML = "लोड होत आहे...";
+
+      fetch("https://script.google.com/macros/s/AKfycbwrfWQp5oa112jX-p2N395LKqwE9xr_I-IKKBiJcPFpViZk51GCntVIHCpFjDdAjOU2Mw/exec?receipt=" + encodeURIComponent(receipt))
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            resultBox.innerHTML = "❌ " + data.error;
+          } else {
+            resultBox.innerHTML = `
+              <strong>दिनांक:</strong> ${data.Date}<br>
+              <strong>पावती क्रमांक:</strong> ${data.ReceiptNumber}<br>
+              <strong>नाव:</strong> ${data.Name}<br>
+              <strong>रक्कम:</strong> ₹${data.Amount}<br>
+              <strong>स्वीकारणारे:</strong> ${data.Receiver}<br>
+              <strong>स्थिती:</strong> ${data.Status}
+            `;
+          }
+        })
+        .catch(error => {
+          resultBox.innerHTML = "डेटा मिळवताना त्रुटी.";
+        });
+    }
+  </script>
+
 </body>
+
 </html>

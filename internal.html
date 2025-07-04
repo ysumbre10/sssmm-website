@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Karyakarta Login - Shree Swami Samarth Mitra Mandal</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f9f3e9;
+            text-align: center;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ff9933;
+            color: white;
+            padding: 10px;
+        }
+
+        .logo {
+            width: 120px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        nav {
+            background: #cc7a00;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd699;
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="password"] {
+            width: 80%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #cc7a00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff9933;
+        }
+
+        a.form-link {
+            display: block;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #cc7a00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.form-link:hover {
+            color: #ff9933;
+        }
+
+        footer {
+            background: #ff9933;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <img src="images/swami_logo-removebg-preview.png" alt="Mandal Logo" class="logo">
+        <h1>Shree Swami Samarth Mitra Mandal</h1>
+        <h4>Registration No. - Maha.741/2003/Pune</h4>
+        <h3>Established - 13 June 2003</h3>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact & Donate</a>
+        <a href="internal.html">Karyakarta Login</a>
+    </nav>
+
+    <div class="container" id="login-box">
+        <h2>Enter Access Code</h2>
+        <input type="password" id="accessCode" placeholder="Enter password">
+        <br>
+        <button onclick="checkPassword()">Submit</button>
+    </div>
+
+    <div class="container" id="form-links" style="display: none;">
+        <h2>Forms for 2025</h2>
+        <a class="form-link" href="https://forms.gle/QnQzCDJRQm1u6nqm7" target="_blank">वर्गणी/देणगी २०२५ अर्ज (Donation 2025 Form)</a>
+        <a class="form-link" href="https://forms.gle/RexZgH51ThH3fm1J8" target="_blank">खर्च २०२५ अर्ज (Expenditure 2025 Form)</a>
+    </div>
+
+    <footer>
+        &copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.
+    </footer>
+
+    <script>
+        function checkPassword() {
+            const code = document.getElementById("accessCode").value;
+            // Change this code to your actual password
+            if (code === "mandal123") {
+                document.getElementById("login-box").style.display = "none";
+                document.getElementById("form-links").style.display = "block";
+            } else {
+                alert("Incorrect code. Please try again.");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
