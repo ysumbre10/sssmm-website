@@ -63,7 +63,7 @@
     }
 
     section {
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
       padding: 20px;
     }
@@ -81,10 +81,9 @@
 
     .qr-image {
       width: 100%;
-      max-width: 300px;
+      max-width: 400px;
       display: block;
       margin: 10px auto;
-      border-radius: 10px;
     }
 
     #receiptInput {
@@ -108,11 +107,6 @@
       background: #ff9933;
     }
 
-    #resultBox {
-      margin-top: 20px;
-      text-align: left;
-    }
-
     footer {
       background: #ff9933;
       color: white;
@@ -121,16 +115,58 @@
       margin-top: 20px;
     }
 
+    .receipt-card {
+      background: linear-gradient(to bottom right, #ffe6f0, #fff);
+      border: 3px solid #ff66cc;
+      padding: 20px;
+      max-width: 500px;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      display: none;
+      text-align: center;
+    }
+
+    .receipt-card h2 {
+      color: #cc007a;
+      margin-top: 10px;
+    }
+
+    .ganesha-img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .field {
+      text-align: left;
+      margin: 10px 0;
+      font-size: 18px;
+      padding: 5px 10px;
+    }
+
+    .field strong {
+      color: #99004d;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    #errorMsg {
+      color: red;
+      margin-top: 10px;
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
         flex-direction: column;
       }
-
       .nav-links.active {
         display: flex;
       }
-
       .menu-toggle {
         display: block;
       }
@@ -146,28 +182,28 @@
   </header>
 
   <nav>
-    <span class="menu-toggle" onclick="toggleMenu()">☰ मेन्यू</span>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ मेनू</span>
     <div class="nav-links" id="navLinks">
       <a href="index-marathi.html">मुख्य पृष्ठ</a>
       <a href="about-marathi.html">आमच्याबद्दल</a>
       <a href="gallery-marathi.html">गॅलरी</a>
       <a href="contact-marathi.html">संपर्क व देणगी</a>
-      <a href="internal.html">कार्यकर्ता लॉगिन</a>
+      <a href="internal-marathi.html">कार्यकर्ता लॉगिन</a>
     </div>
   </nav>
 
   <section>
     <div class="contact-card">
-      <h2>आमच्याशी संपर्क साधा</h2>
+      <h2>आमच्याशी संपर्क करा</h2>
       <p><strong>पत्ता:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">श्री स्वामी समर्थ मित्र मंडळ, सुम्ब्रेनगर, वाकी खुर्द, तालुका खेड, जिल्हा पुणे, 410501</a>.</p>
       <p><strong>मोबाईल:</strong> <a href="tel:7397874647">7057705792</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">WhatsApp वर संपर्क करा</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">WhatsApp वर चॅट करा</a></p>
       <p><strong>ई-मेल:</strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
     </div>
 
     <div class="donate-card">
-      <h2>आमच्या मंडळाला पाठिंबा द्या</h2>
-      <p>आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीमय व सामाजिक उपक्रम आयोजित करण्यात मदत करते. आपल्या सहकार्याबद्दल धन्यवाद!</p>
+      <h2>आम्हाला समर्थन द्या</h2>
+      <p>आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीमय आणि सामाजिक उपक्रम राबवण्यात मदत करते. तुमच्या सहकार्याबद्दल धन्यवाद!</p>
       <p><strong>बँक तपशील:</strong></p>
       <p>
         खातेदाराचे नाव: श्री गौरव अनिल शेटे<br>
@@ -177,8 +213,8 @@
         शाखा: चाकण, 0829, 410501
       </p>
       <p><strong>UPI ID:</strong> shreeswamisamarth@indie</p>
-      <p><strong>QR स्कॅन करा व देणगी द्या:</strong></p>
-      <img src="images/vargani_qr.jpeg" alt="देणगी QR कोड" class="qr-image">
+      <p><strong>QR कोड स्कॅन करा:</strong></p>
+      <img src="images/vargani_qr.jpeg" alt="QR कोड" class="qr-image">
     </div>
 
     <div class="check-card">
@@ -186,7 +222,21 @@
       <input type="text" id="receiptInput" placeholder="पावती क्रमांक टाका">
       <br>
       <button onclick="checkReceipt()">तपासा</button>
-      <div id="resultBox"></div>
+      <div id="errorMsg"></div>
+    </div>
+
+    <div class="receipt-card" id="receiptCard">
+      <img src="images/ganesha.png" alt="गणेश" class="ganesha-img">
+      <h2>श्री स्वामी समर्थ मित्र मंडळ</h2>
+      <p><strong>नोंदणी क्र.:</strong> Maha.741/2003/Pune</p>
+      <hr>
+      <div class="field"><strong>पावती क्रमांक:</strong> <span id="receiptNo">___</span></div>
+      <div class="field"><strong>दिनांक:</strong> <span id="date">___</span></div>
+      <div class="field"><strong>नाव:</strong> <span id="name">___</span></div>
+      <div class="field"><strong>रक्कम:</strong> ₹<span id="amount">___</span></div>
+      <div class="field"><strong>स्वीकारणारे:</strong> <span id="receiver">___</span></div>
+      <div class="field"><strong>स्थिती:</strong> <span id="status">___</span></div>
+      <p class="footer-text">तुमच्या उदार सहकार्याबद्दल धन्यवाद!</p>
     </div>
 
     <div class="social-card">
@@ -196,7 +246,7 @@
   </section>
 
   <footer>
-    &copy; 2003 - 2025 श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
+    &copy; २००३ - २०२५ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
   </footer>
 
   <script>
@@ -205,28 +255,38 @@
     }
 
     function checkReceipt() {
-      var receipt = document.getElementById("receiptInput").value;
-      var resultBox = document.getElementById("resultBox");
-      resultBox.innerHTML = "लोड होत आहे...";
+      var receipt = document.getElementById("receiptInput").value.trim();
+      var errorMsg = document.getElementById("errorMsg");
+      var card = document.getElementById("receiptCard");
+      errorMsg.innerHTML = "";
+      card.style.display = "none";
+
+      if (!receipt) {
+        errorMsg.innerHTML = "कृपया पावती क्रमांक टाका.";
+        return;
+      }
+
+      errorMsg.innerHTML = "लोड होत आहे...";
 
       fetch("https://script.google.com/macros/s/AKfycbwrfWQp5oa112jX-p2N395LKqwE9xr_I-IKKBiJcPFpViZk51GCntVIHCpFjDdAjOU2Mw/exec?receipt=" + encodeURIComponent(receipt))
         .then(response => response.json())
         .then(data => {
           if (data.error) {
-            resultBox.innerHTML = "❌ " + data.error;
+            errorMsg.innerHTML = "❌ " + data.error;
           } else {
-            resultBox.innerHTML = `
-              <strong>दिनांक:</strong> ${data.Date}<br>
-              <strong>पावती क्रमांक:</strong> ${data.ReceiptNumber}<br>
-              <strong>नाव:</strong> ${data.Name}<br>
-              <strong>रक्कम:</strong> ₹${data.Amount}<br>
-              <strong>स्वीकारणारे:</strong> ${data.Receiver}<br>
-              <strong>स्थिती:</strong> ${data.Status}
-            `;
+            document.getElementById("receiptNo").innerText = data.ReceiptNumber || "___";
+            document.getElementById("date").innerText = data.Date || "___";
+            document.getElementById("name").innerText = data.Name || "___";
+            document.getElementById("amount").innerText = data.Amount || "___";
+            document.getElementById("receiver").innerText = data.Receiver || "___";
+            document.getElementById("status").innerText = data.Status || "___";
+
+            card.style.display = "block";
+            errorMsg.innerHTML = "";
           }
         })
         .catch(error => {
-          resultBox.innerHTML = "डेटा मिळवताना त्रुटी.";
+          errorMsg.innerHTML = "डेटा मिळवताना त्रुटी.";
         });
     }
   </script>

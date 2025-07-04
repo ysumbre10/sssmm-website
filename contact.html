@@ -107,11 +107,6 @@
       background: #ff9933;
     }
 
-    #resultBox {
-      margin-top: 20px;
-      text-align: left;
-    }
-
     footer {
       background: #ff9933;
       color: white;
@@ -120,7 +115,50 @@
       margin-top: 20px;
     }
 
-    /* Responsive nav */
+    .receipt-card {
+      background: linear-gradient(to bottom right, #ffe6f0, #fff);
+      border: 3px solid #ff66cc;
+      padding: 20px;
+      max-width: 500px;
+      margin: 30px auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      display: none;
+      text-align: center;
+    }
+
+    .receipt-card h2 {
+      color: #cc007a;
+      margin-top: 10px;
+    }
+
+    .ganesha-img {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    .field {
+      text-align: left;
+      margin: 10px 0;
+      font-size: 18px;
+      padding: 5px 10px;
+    }
+
+    .field strong {
+      color: #99004d;
+    }
+
+    .footer-text {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    #errorMsg {
+      color: red;
+      margin-top: 10px;
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -184,7 +222,21 @@
       <input type="text" id="receiptInput" placeholder="Enter Receipt Number">
       <br>
       <button onclick="checkReceipt()">Check</button>
-      <div id="resultBox"></div>
+      <div id="errorMsg"></div>
+    </div>
+
+    <div class="receipt-card" id="receiptCard">
+      <img src="images/ganesha.png" alt="Ganesh" class="ganesha-img">
+      <h2>Shree Swami Samarth Mitra Mandal</h2>
+      <p><strong>Reg No.:</strong> Maha.741/2003/Pune</p>
+      <hr>
+      <div class="field"><strong>Receipt Number:</strong> <span id="receiptNo">___</span></div>
+      <div class="field"><strong>Date:</strong> <span id="date">___</span></div>
+      <div class="field"><strong>Name:</strong> <span id="name">___</span></div>
+      <div class="field"><strong>Amount:</strong> ₹<span id="amount">___</span></div>
+      <div class="field"><strong>Receiver:</strong> <span id="receiver">___</span></div>
+      <div class="field"><strong>Status:</strong> <span id="status">___</span></div>
+      <p class="footer-text">Thank you for your generous support!</p>
     </div>
 
     <div class="social-card">
@@ -203,28 +255,38 @@
     }
 
     function checkReceipt() {
-      var receipt = document.getElementById("receiptInput").value;
-      var resultBox = document.getElementById("resultBox");
-      resultBox.innerHTML = "Loading...";
+      var receipt = document.getElementById("receiptInput").value.trim();
+      var errorMsg = document.getElementById("errorMsg");
+      var card = document.getElementById("receiptCard");
+      errorMsg.innerHTML = "";
+      card.style.display = "none";
+
+      if (!receipt) {
+        errorMsg.innerHTML = "Please enter a receipt number.";
+        return;
+      }
+
+      errorMsg.innerHTML = "Loading...";
 
       fetch("https://script.google.com/macros/s/AKfycbwrfWQp5oa112jX-p2N395LKqwE9xr_I-IKKBiJcPFpViZk51GCntVIHCpFjDdAjOU2Mw/exec?receipt=" + encodeURIComponent(receipt))
         .then(response => response.json())
         .then(data => {
           if (data.error) {
-            resultBox.innerHTML = "❌ " + data.error;
+            errorMsg.innerHTML = "❌ " + data.error;
           } else {
-            resultBox.innerHTML = `
-              <strong>Date:</strong> ${data.Date}<br>
-              <strong>Receipt Number:</strong> ${data.ReceiptNumber}<br>
-              <strong>Name:</strong> ${data.Name}<br>
-              <strong>Amount:</strong> ₹${data.Amount}<br>
-              <strong>Receiver:</strong> ${data.Receiver}<br>
-              <strong>Status:</strong> ${data.Status}
-            `;
+            document.getElementById("receiptNo").innerText = data.ReceiptNumber || "___";
+            document.getElementById("date").innerText = data.Date || "___";
+            document.getElementById("name").innerText = data.Name || "___";
+            document.getElementById("amount").innerText = data.Amount || "___";
+            document.getElementById("receiver").innerText = data.Receiver || "___";
+            document.getElementById("status").innerText = data.Status || "___";
+
+            card.style.display = "block";
+            errorMsg.innerHTML = "";
           }
         })
         .catch(error => {
-          resultBox.innerHTML = "Error fetching data.";
+          errorMsg.innerHTML = "Error fetching data.";
         });
     }
   </script>
