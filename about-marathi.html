@@ -1,19 +1,107 @@
 <!DOCTYPE html>
 <html lang="mr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>आमच्याबद्दल - श्री स्वामी समर्थ मित्र मंडळ</title>
   <style>
-    body {font-family: sans-serif; margin:0; background:#f9f3e9;}
-    header {background: #ff9933; color: white; padding: 20px; text-align: center;}
-    nav {background: #cc7a00; padding: 10px; text-align: center;}
-    nav a {color: white; margin: 0 15px; text-decoration: none; font-weight: bold;}
-    section {padding: 30px;}
-    footer {background: #ff9933; color: white; text-align: center; padding: 15px;}
-    .logo {width: 150px; display: block; margin: 0 auto 20px;}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f9f3e9;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ff9933;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    nav {
+      background: #cc7a00;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      color: #ffd699;
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.1);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: white;
+      padding: 8px 12px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+      text-align: justify;
+    }
+
+    h2 {
+      color: #cc7a00;
+      border-bottom: 3px solid #ff9933;
+      padding-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #ff9933;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -22,37 +110,47 @@
   </header>
 
   <nav>
-    <a href="index-marathi.html">मुख्य पृष्ठ</a>
-    <a href="about-marathi.html">आमच्याबद्दल</a>
-    <a href="gallery-marathi.html">गॅलरी</a>
-    <a href="contact-marathi.html">संपर्क व देणगी</a>
-    <a href="about.html" style="float:right;">English</a>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ मेन्यू</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index-marathi.html">मुख्य पृष्ठ</a>
+      <a href="about-marathi.html">आमच्याबद्दल</a>
+      <a href="gallery-marathi.html">गॅलरी</a>
+      <a href="contact-marathi.html">संपर्क व देणगी</a>
+      <a href="internal.html">कार्यकर्ता लॉगिन</a>
+      <a href="index.html" style="float:right;">EN</a>
+    </div>
   </nav>
 
   <section>
     <h2>आमचा प्रवास</h2>
     <p>
-      श्री स्वामी समर्थ मित्र मंडळाची स्थापना १३ जून २००३ रोजी भक्ती आणि सेवेद्वारे समुदाय एकत्र करण्याच्या ध्येयाने झाली. काही समर्पित भक्तांपासून सुरुवात करून, आज आम्ही एक मोठे कुटुंब आहोत, जे सांस्कृतिक व आध्यात्मिक मूल्ये जपण्यास आणि पसरविण्यास कटिबद्ध आहे.
+      श्री स्वामी समर्थ मित्र मंडळाची स्थापना १३ जून २००३ रोजी भक्ती व सेवेद्वारे समाजाला एकत्र आणण्याच्या उद्देशाने करण्यात आली. काही समर्पित भक्तांच्या लहान समूहापासून सुरुवात झालेल्या या मंडळाने आता एक मोठे कुटुंब बनले आहे, जे सांस्कृतिक व आध्यात्मिक मूल्ये जपण्यासाठी कटिबद्ध आहे.
     </p>
 
     <h2>आमचा उद्देश</h2>
     <p>
-      आमच्या मंडळाचा मुख्य उद्देश म्हणजे भव्यतेने आणि भक्तीभावाने गणेशोत्सव साजरा करणे, तसेच वर्षभर विविध समाजोपयोगी व सेवाभावी उपक्रम आयोजित करणे. आमच्या परंपरा जपण्यासाठी आणि समाजसेवा करण्यासाठी तरुण पिढीला प्रेरित करणे हे आमचे ध्येय आहे.
+      मंडळाचा मुख्य उद्देश म्हणजे गणेश उत्सव मोठ्या भक्तिभावाने आणि भव्यतेने साजरा करणे तसेच वर्षभर विविध सामाजिक व सेवाभावी उपक्रम राबवणे. तरुण पिढीला आपल्या परंपरा जपण्याची आणि समाजासाठी निःस्वार्थ सेवेची प्रेरणा देणे हे आमचे ध्येय आहे.
     </p>
 
     <h2>आमचे सदस्य</h2>
     <p>
-      आमच्या मंडळात उत्साही आणि समर्पित सदस्यांचा समावेश आहे, जे कार्यक्रमांची आखणी, सजावट, सांस्कृतिक कार्यक्रम व समाजसेवेचे कार्य मेहनतीने पार पाडतात. मुख्य समितीत अध्यक्ष, उपाध्यक्ष, खजिनदार, सचिव तसेच अनेक स्वयंसेवक असतात, जे मंडळाच्या सर्व कामात सहकार्य करतात.
+      आमचे मंडळ उत्साही आणि समर्पित सदस्यांनी बनलेले आहे, जे विविध कार्यक्रमांचे आयोजन व कार्यान्वयन करण्यासाठी अखंड मेहनत घेतात. कार्यकारिणीत अध्यक्ष, उपाध्यक्ष, कोषाध्यक्ष, सचिव आणि अनेक स्वयंसेवक यांचा समावेश आहे, जे नियोजन, सजावट, सांस्कृतिक कार्यक्रम व समाजसेवा यात सहभाग घेतात.
     </p>
 
     <p>
-      प्रत्येक सदस्याची भूमिका महत्त्वाची आहे, आणि आम्ही सर्वांना आमच्या मिशनमध्ये सामील होण्याचे व भक्ती व प्रेमाने सेवा करण्याचे स्वागत करतो.
+      प्रत्येक सदस्याचे महत्त्वाचे योगदान असते, आणि जो कोणी आमच्या मिशनमध्ये सामील होऊ इच्छितो त्याचे आम्ही सदैव स्वागत करतो.
     </p>
   </section>
 
   <footer>
     &copy; २००३ - २०२५ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>

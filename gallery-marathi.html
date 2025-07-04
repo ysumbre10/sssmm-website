@@ -2,21 +2,135 @@
 <html lang="mr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>गॅलरी - श्री स्वामी समर्थ मित्र मंडळ</title>
   <style>
-    body {font-family: sans-serif; margin:0; background:#f9f3e9;}
-    header {background: #ff9933; color: white; padding: 20px; text-align: center;}
-    nav {background: #cc7a00; padding: 10px; text-align: center;}
-    nav a {color: white; margin: 0 15px; text-decoration: none; font-weight: bold;}
-    section {padding: 30px;}
-    footer {background: #ff9933; color: white; text-align: center; padding: 15px;}
-    .logo {width: 150px; display: block; margin: 0 auto 20px;}
-    .gallery img {width: 100%; max-width: 300px; margin: 10px; border-radius: 10px;}
-    .video-container {display: flex; flex-wrap: wrap; justify-content: center;}
-    .video-container iframe {margin: 10px;}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f9f3e9;
+      color: #333;
+    }
+
+    header {
+      background: #ff9933;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    nav {
+      background: #cc7a00;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      color: #ffd699;
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.1);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: white;
+      padding: 8px 12px;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+      transition: transform 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      max-width: 300px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #cc7a00;
+      border-bottom: 3px solid #ff9933;
+      padding-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background: #ff9933;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -25,11 +139,14 @@
   </header>
 
   <nav>
-    <a href="index-marathi.html">मुख्य पृष्ठ</a>
-    <a href="about-marathi.html">आमच्याबद्दल</a>
-    <a href="gallery-marathi.html">गॅलरी</a>
-    <a href="contact-marathi.html">संपर्क व देणगी</a>
-    <a href="gallery.html" style="float:right;">English</a>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ मेन्यू</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index-marathi.html">मुख्य पृष्ठ</a>
+      <a href="about-marathi.html">आमच्याबद्दल</a>
+      <a href="gallery-marathi.html">गॅलरी</a>
+      <a href="contact-marathi.html">संपर्क व देणगी</a>
+      <a href="gallery.html" style="float:right;">EN</a>
+    </div>
   </nav>
 
   <section>
@@ -43,9 +160,9 @@
 
     <h2>आमचे यूट्यूब व्हिडिओ</h2>
     <div class="video-container">
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
-      <iframe width="300" height="200" src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID3" frameborder="0" allowfullscreen></iframe>
       <!-- आवश्यक असल्यास आणखी व्हिडिओ जोडा -->
     </div>
   </section>
@@ -53,6 +170,12 @@
   <footer>
     &copy; २००३ - २०२५ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
   </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+  </script>
 
 </body>
 </html>

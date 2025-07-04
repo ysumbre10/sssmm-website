@@ -10,9 +10,9 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             background: #f9f3e9;
-            text-align: center;
             color: #333;
             line-height: 1.6;
+            text-align: center;
         }
 
         header {
@@ -30,33 +30,49 @@
         nav {
             background: #cc7a00;
             padding: 12px;
-            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         nav a {
             color: white;
-            margin: 0 15px;
+            padding: 8px 12px;
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s, transform 0.3s;
+            border-radius: 5px;
         }
 
         nav a:hover {
             color: #ffd699;
+            background-color: rgba(255, 255, 255, 0.1);
             transform: scale(1.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: white;
+            padding: 8px 12px;
         }
 
         .container {
             max-width: 500px;
-            margin: 60px auto;
-            padding: 30px;
+            margin: 40px auto;
+            padding: 25px;
             background: white;
             border-radius: 10px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
         input[type="password"] {
-            width: 80%;
+            width: 90%;
             padding: 10px;
             margin-top: 10px;
             border-radius: 5px;
@@ -79,8 +95,8 @@
 
         a.form-link {
             display: block;
-            margin: 20px 0;
-            font-size: 18px;
+            margin: 15px 0;
+            font-size: 17px;
             color: #cc7a00;
             text-decoration: none;
             font-weight: bold;
@@ -97,6 +113,23 @@
             padding: 15px;
             margin-top: 40px;
         }
+
+        /* Responsive nav */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
     </style>
 </head>
 
@@ -110,11 +143,14 @@
     </header>
 
     <nav>
-        <a href="index-marathi.html">मुख्य पृष्ठ</a>
-        <a href="about-marathi.html">आमच्याबद्दल</a>
-        <a href="gallery-marathi.html">गॅलरी</a>
-        <a href="contact-marathi.html">संपर्क व देणगी</a>
-        <a href="internal-marathi.html">कार्यकर्ता लॉगिन</a>
+        <span class="menu-toggle" onclick="toggleMenu()">☰ मेन्यू</span>
+        <div class="nav-links" id="navLinks">
+            <a href="index-marathi.html">मुख्य पृष्ठ</a>
+            <a href="about-marathi.html">आमच्याबद्दल</a>
+            <a href="gallery-marathi.html">गॅलरी</a>
+            <a href="contact-marathi.html">संपर्क व देणगी</a>
+            <a href="internal-marathi.html">कार्यकर्ता लॉगिन</a>
+        </div>
     </nav>
 
     <div class="container" id="login-box">
@@ -135,9 +171,12 @@
     </footer>
 
     <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
         function checkPassword() {
             const code = document.getElementById("accessCode").value;
-            // Change this code to your actual password
             if (code === "mandal123") {
                 document.getElementById("login-box").style.display = "none";
                 document.getElementById("form-links").style.display = "block";

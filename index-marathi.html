@@ -21,7 +21,12 @@
       color: white;
       padding: 10px;
       text-align: center;
-      position: relative;
+    }
+
+    .logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto 10px;
     }
 
     nav {
@@ -30,17 +35,34 @@
       text-align: center;
     }
 
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     nav a {
       color: white;
-      margin: 0 15px;
+      padding: 8px 12px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s, transform 0.3s;
+      border-radius: 5px;
     }
 
     nav a:hover {
       color: #ffd699;
+      background-color: rgba(255, 255, 255, 0.1);
       transform: scale(1.1);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: white;
+      padding: 8px 12px;
     }
 
     section {
@@ -49,6 +71,7 @@
       opacity: 0;
       transform: translateY(30px);
       transition: all 1s ease;
+      padding: 20px;
     }
 
     section.show {
@@ -61,10 +84,12 @@
       color: white;
       text-align: center;
       padding: 15px;
+      margin-top: 20px;
     }
 
     .main-image {
-      width: 70%;
+      width: 90%;
+      max-width: 700px;
       display: block;
       margin: 30px auto;
       border-radius: 15px;
@@ -76,16 +101,10 @@
       transform: scale(1.05);
     }
 
-    .logo {
-      width: 120px;
-      display: block;
-      margin: 0 auto 10px;
-    }
-
     h2 {
       color: #cc7a00;
       border-bottom: 3px solid #ff9933;
-      padding-bottom: 20px;
+      padding-bottom: 15px;
       margin-top: 20px;
     }
 
@@ -100,6 +119,21 @@
       text-align: justify;
       margin-top: 20px;
     }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 
@@ -113,12 +147,15 @@
   </header>
 
   <nav>
-    <a href="index-marathi.html">मुख्य पृष्ठ</a>
-    <a href="about-marathi.html">आमच्याबद्दल</a>
-    <a href="gallery-marathi.html">गॅलरी</a>
-    <a href="contact-marathi.html">संपर्क व देणगी</a>
-    <a href="internal.html">कार्यकर्ता लॉगिन</a>
-    <a href="index.html" style="float:right;">EN</a>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ मेन्यू</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index-marathi.html">मुख्य पृष्ठ</a>
+      <a href="about-marathi.html">आमच्याबद्दल</a>
+      <a href="gallery-marathi.html">गॅलरी</a>
+      <a href="contact-marathi.html">संपर्क व देणगी</a>
+      <a href="internal.html">कार्यकर्ता लॉगिन</a>
+      <a href="index.html" style="float:right;">EN</a>
+    </div>
   </nav>
 
   <section id="welcome">
@@ -162,6 +199,10 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
     // Animation on scroll
     const sections = document.querySelectorAll('section');
     const options = { threshold: 0.2 };

@@ -3,56 +3,69 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>संपर्क व देणगी - श्री स्वामी समर्थ मित्र मंडळ</title>
   <style>
     body {
-      font-family: sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       background: #f9f3e9;
+      color: #333;
     }
 
     header {
       background: #ff9933;
       color: white;
-      padding: 20px;
-      text-align: center;
-    }
-
-    nav {
-      background: #cc7a00;
       padding: 10px;
       text-align: center;
     }
 
+    .logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    nav {
+      background: #cc7a00;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     nav a {
       color: white;
-      margin: 0 15px;
+      padding: 8px 12px;
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s, transform 0.3s;
+      border-radius: 5px;
     }
 
     nav a:hover {
       color: #ffd699;
+      background-color: rgba(255, 255, 255, 0.1);
       transform: scale(1.1);
     }
 
-    section {
-      padding: 30px;
-    }
-
-    footer {
-      background: #ff9933;
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
       color: white;
-      text-align: center;
-      padding: 15px;
+      padding: 8px 12px;
     }
 
-    .logo {
-      width: 150px;
-      display: block;
-      margin: 0 auto 20px;
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
     }
 
     .contact-card,
@@ -62,19 +75,20 @@
       background-color: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       margin: 20px auto;
     }
 
     .qr-image {
-      width: 400px;
+      width: 100%;
+      max-width: 300px;
       display: block;
       margin: 10px auto;
+      border-radius: 10px;
     }
 
     #receiptInput {
-      width: 80%;
+      width: 90%;
       padding: 10px;
       margin: 10px 0;
       border-radius: 5px;
@@ -98,6 +112,29 @@
       margin-top: 20px;
       text-align: left;
     }
+
+    footer {
+      background: #ff9933;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
   </style>
 </head>
 
@@ -109,11 +146,14 @@
   </header>
 
   <nav>
-    <a href="index-marathi.html">मुख्य पृष्ठ</a>
-    <a href="about-marathi.html">आमच्याबद्दल</a>
-    <a href="gallery-marathi.html">गॅलरी</a>
-    <a href="contact-marathi.html">संपर्क व देणगी</a>
-    <a href="internal.html">कार्यकर्ता लॉगिन</a>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ मेन्यू</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index-marathi.html">मुख्य पृष्ठ</a>
+      <a href="about-marathi.html">आमच्याबद्दल</a>
+      <a href="gallery-marathi.html">गॅलरी</a>
+      <a href="contact-marathi.html">संपर्क व देणगी</a>
+      <a href="internal.html">कार्यकर्ता लॉगिन</a>
+    </div>
   </nav>
 
   <section>
@@ -127,9 +167,7 @@
 
     <div class="donate-card">
       <h2>आमच्या मंडळाला पाठिंबा द्या</h2>
-      <p>
-        आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीमय व सामाजिक उपक्रम आयोजित करण्यात मदत करते. आपल्या सहकार्याबद्दल धन्यवाद!
-      </p>
+      <p>आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीमय व सामाजिक उपक्रम आयोजित करण्यात मदत करते. आपल्या सहकार्याबद्दल धन्यवाद!</p>
       <p><strong>बँक तपशील:</strong></p>
       <p>
         खातेदाराचे नाव: श्री गौरव अनिल शेटे<br>
@@ -162,6 +200,10 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
     function checkReceipt() {
       var receipt = document.getElementById("receiptInput").value;
       var resultBox = document.getElementById("resultBox");
@@ -190,5 +232,4 @@
   </script>
 
 </body>
-
 </html>
