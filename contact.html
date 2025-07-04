@@ -30,6 +30,12 @@
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffd699;
+      transform: scale(1.1);
     }
 
     section {
@@ -51,7 +57,8 @@
 
     .contact-card,
     .donate-card,
-    .social-card {
+    .social-card,
+    .check-card {
       background-color: #fff;
       padding: 20px;
       border-radius: 10px;
@@ -64,6 +71,32 @@
       width: 400px;
       display: block;
       margin: 10px auto;
+    }
+
+    #receiptInput {
+      width: 80%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      padding: 10px 20px;
+      background: #cc7a00;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff9933;
+    }
+
+    #resultBox {
+      margin-top: 20px;
+      text-align: left;
     }
   </style>
 </head>
@@ -80,6 +113,7 @@
     <a href="about.html">About Us</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact & Donate</a>
+    <a href="internal.html">Karyakarta Login</a>
   </nav>
 
   <section>
@@ -112,6 +146,14 @@
       <img src="images/vargani_qr.jpeg" alt="Donation QR Code" class="qr-image">
     </div>
 
+    <div class="check-card">
+      <h2>Check Your Donation Details</h2>
+      <input type="text" id="receiptInput" placeholder="Enter Receipt Number">
+      <br>
+      <button onclick="checkReceipt()">Check</button>
+      <div id="resultBox"></div>
+    </div>
+
     <div class="social-card">
       <h2>Follow Us</h2>
       <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr"
@@ -122,6 +164,34 @@
   <footer>
     &copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.
   </footer>
+
+  <script>
+    function checkReceipt() {
+      var receipt = document.getElementById("receiptInput").value;
+      var resultBox = document.getElementById("resultBox");
+      resultBox.innerHTML = "Loading...";
+
+      fetch("https://script.google.com/macros/s/AKfycbwrfWQp5oa112jX-p2N395LKqwE9xr_I-IKKBiJcPFpViZk51GCntVIHCpFjDdAjOU2Mw/exec?receipt=" + encodeURIComponent(receipt))
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            resultBox.innerHTML = "❌ " + data.error;
+          } else {
+            resultBox.innerHTML = `
+              <strong>Date:</strong> ${data.Date}<br>
+              <strong>Receipt Number:</strong> ${data.ReceiptNumber}<br>
+              <strong>Name:</strong> ${data.Name}<br>
+              <strong>Amount:</strong> ₹${data.Amount}<br>
+              <strong>Receiver:</strong> ${data.Receiver}<br>
+              <strong>Status:</strong> ${data.Status}
+            `;
+          }
+        })
+        .catch(error => {
+          resultBox.innerHTML = "Error fetching data.";
+        });
+    }
+  </script>
 
 </body>
 
