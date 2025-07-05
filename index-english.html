@@ -120,7 +120,50 @@
       margin-top: 20px;
     }
 
-    /* Responsive Styles */
+    .countdown-section {
+      background: linear-gradient(135deg, #ffcc80, #ffe0b2);
+      padding: 30px;
+      border-radius: 15px;
+      margin: 30px auto;
+      max-width: 600px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown-section h2 {
+      border: none;
+      margin-bottom: 20px;
+      color: #cc7a00;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: white;
+      color: #cc7a00;
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      min-width: 80px;
+    }
+
+    .time-box span {
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .time-box small {
+      display: block;
+      font-size: 14px;
+      margin-top: 5px;
+      color: #555;
+    }
+
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -159,6 +202,28 @@
     </div>
   </nav>
 
+  <section class="countdown-section">
+    <h2>Ganesh Utsav Starts In</h2>
+    <div class="timer" id="timer">
+      <div class="time-box">
+        <span id="days">0</span>
+        <small>Days</small>
+      </div>
+      <div class="time-box">
+        <span id="hours">0</span>
+        <small>Hours</small>
+      </div>
+      <div class="time-box">
+        <span id="minutes">0</span>
+        <small>Minutes</small>
+      </div>
+      <div class="time-box">
+        <span id="seconds">0</span>
+        <small>Seconds</small>
+      </div>
+    </div>
+  </section>
+
   <section id="welcome">
     <h2>Welcome to Shree Swami Samarth Mitra Mandal</h2>
     <img src="images/WhatsApp Image 2025-07-03 at 16.33.21.jpeg" alt="Ganesh Idol" class="main-image">
@@ -171,6 +236,40 @@
       Throughout the year, we organize Ganesh Utsav, Navratri Utsav, Shivjayanti Utsav, Dahihandi Utsav, health camps,
       blood donation drives, tree plantation drives, and many other activities that inspire the spirit of togetherness
       and service.
+    </p>
+    <hr>
+  </section>
+
+  <section id="shivaji">
+    <h2>Chhatrapati Shivaji Maharaj and Ganpati Bappa</h2>
+    <img src="images/shivba.jpg" alt="Shivba" class="main-image">
+    <p>
+      <b>Chhatrapati Shivaji Maharaj</b>, the great Maratha warrior king, is revered not only for his valor and
+      strategic
+      brilliance but also for his deep devotion to Hindu dharma and culture. Though the public celebration of Ganesh
+      Utsav was popularized later by Lokmanya Tilak, it is said that Shivaji Maharaj held immense faith in Lord Ganesh
+      and would seek Ganpati Bappa's blessings before important battles and missions. For Maharashtrians, Ganpati Bappa
+      symbolizes courage, wisdom, and the power to overcome obstacles — qualities that perfectly reflect Shivaji
+      Maharaj's life and legacy. Together, the devotion to Ganesh and the spirit of Shivaji Maharaj inspire us to uphold
+      bravery, unity, and unwavering dedication to society and the motherland.
+    </p>
+    <hr>
+  </section>
+
+  <section id="swami">
+    <h2>Swami Samarth Maharaj: The Eternal Guiding Light</h2>
+    <img src="images/swamidutta.jpg" alt="Swami Samarth Maharaj" class="main-image">
+    <p>
+      <b>Swami Samarth Maharaj</b> of Akkalkot is revered as a divine incarnation and a supreme spiritual master who
+      guided countless devotees towards peace, faith, and inner awakening. His teachings transcend all boundaries and
+      emphasize the power of devotion, compassion, and selfless service.
+    </p>
+    <p>
+      In this world full of distractions and challenges, the presence of a true Guru is essential to attain spiritual
+      growth and find purpose. A Guru not only shows the right path but also uplifts our soul, removes obstacles from
+      our lives, and helps us realize the ultimate truth. Swami Samarth Maharaj inspires us to lead a life filled with
+      devotion, righteousness, and humility, reminding us that with the blessings of a Guru, one can overcome every
+      difficulty and attain true fulfillment.
     </p>
     <hr>
   </section>
@@ -191,21 +290,6 @@
     <p>
       Today, Ganesh Utsav symbolizes not only spiritual devotion but also social harmony and cultural pride, making it
       one of the most celebrated and beloved festivals in Maharashtra.
-    </p>
-    <hr>
-  </section>
-
-  <section id="shivaji">
-    <h2>Chhatrapati Shivaji Maharaj and Ganpati Bappa</h2>
-    <img src="images/shivba.jpg" alt="Shivba" class="main-image">
-    <p>
-      <b>Chhatrapati Shivaji Maharaj</b>, the great Maratha warrior king, is revered not only for his valor and strategic
-      brilliance but also for his deep devotion to Hindu dharma and culture. Though the public celebration of Ganesh
-      Utsav was popularized later by Lokmanya Tilak, it is said that Shivaji Maharaj held immense faith in Lord Ganesh
-      and would seek Ganpati Bappa's blessings before important battles and missions. For Maharashtrians, Ganpati Bappa
-      symbolizes courage, wisdom, and the power to overcome obstacles — qualities that perfectly reflect Shivaji
-      Maharaj's life and legacy. Together, the devotion to Ganesh and the spirit of Shivaji Maharaj inspire us to uphold
-      bravery, unity, and unwavering dedication to society and the motherland.
     </p>
     <hr>
   </section>
@@ -234,6 +318,29 @@
     sections.forEach(section => {
       observer.observe(section);
     });
+
+    // Countdown Timer
+    const countdownDate = new Date("August 27, 2025 00:00:00").getTime();
+
+    const timerFunction = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        clearInterval(timerFunction);
+        document.getElementById("timer").innerHTML = "<h3>Ganesh Utsav has started! 🙏🎉</h3>";
+      }
+    }, 1000);
   </script>
 
 </body>
