@@ -3,13 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact & Donate - Shree Swami Samarth Mitra Mandal</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
       background: #f9f3e9;
+      margin: 0;
+      padding: 0;
       color: #333;
     }
 
@@ -30,6 +31,7 @@
       background: #cc7a00;
       padding: 12px;
       text-align: center;
+      position: relative;
     }
 
     .nav-links {
@@ -63,7 +65,7 @@
     }
 
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
@@ -75,7 +77,7 @@
       background-color: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin: 20px auto;
     }
 
@@ -101,10 +103,70 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 16px;
     }
 
     button:hover {
       background: #ff9933;
+    }
+
+    .receipt-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 30px;
+    }
+
+    .receipt-bg {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .field-label {
+      position: absolute;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .field-value {
+      font-weight: normal;
+      margin-left: 5px;
+    }
+
+    /* Adjust positions */
+    .receipt-no {
+      top: 310px;
+      left: 320px;
+    }
+
+    .date {
+      top: 340px;
+      left: 320px;
+    }
+
+    .name {
+      top: 370px;
+      left: 320px;
+    }
+
+    .amount {
+      top: 400px;
+      left: 320px;
+    }
+
+    .receiver {
+      top: 430px;
+      left: 320px;
+    }
+
+    .status {
+      top: 460px;
+      left: 320px;
     }
 
     footer {
@@ -113,45 +175,6 @@
       text-align: center;
       padding: 15px;
       margin-top: 20px;
-    }
-
-    .receipt-card {
-      background: linear-gradient(to bottom right, #ffe6f0, #fff);
-      border: 3px solid #ff66cc;
-      padding: 20px;
-      max-width: 500px;
-      margin: 30px auto;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      display: none;
-      text-align: center;
-    }
-
-    .receipt-card h2 {
-      color: #cc007a;
-      margin-top: 10px;
-    }
-
-    .ganesha-img {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-
-    .field {
-      text-align: left;
-      margin: 10px 0;
-      font-size: 18px;
-      padding: 5px 10px;
-    }
-
-    .field strong {
-      color: #99004d;
-    }
-
-    .footer-text {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #555;
     }
 
     #errorMsg {
@@ -164,11 +187,16 @@
         display: none;
         flex-direction: column;
       }
+
       .nav-links.active {
         display: flex;
       }
+
       .menu-toggle {
         display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
       }
     }
   </style>
@@ -196,15 +224,18 @@
   <section>
     <div class="contact-card">
       <h2>Contact Us</h2>
-      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">Shree Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Taluka Khed, District Pune, 410501</a>.</p>
-      <p><strong>Mobile:</strong> <a href="tel:7397874647">7057705792</a></p>
+      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">Shree
+          Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Taluka Khed, District Pune, 410501</a>.</p>
+      <p><strong>Mobile:</strong> <a href="tel:7057705792">7057705792</a></p>
       <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">Chat on WhatsApp</a></p>
-      <p><strong>Email:</strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
+      <p><strong>Email:</strong> <a
+          href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
     </div>
 
     <div class="donate-card">
       <h2>Support Our Mandal</h2>
-      <p>Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you for supporting our mission!</p>
+      <p>Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you
+        for supporting our mission!</p>
       <p><strong>Bank Details for Donation:</strong></p>
       <p>
         Account Holder Name: Mr Gaurav Anil Shete<br>
@@ -219,30 +250,27 @@
     </div>
 
     <div class="check-card">
-      <h2>Check Your Donation Details</h2>
+      <h2>Check & Show Your Receipt</h2>
       <input type="text" id="receiptInput" placeholder="Enter Receipt Number">
       <br>
-      <button onclick="checkReceipt()">Check</button>
+      <button onclick="checkReceipt()">Fetch & Show</button>
       <div id="errorMsg"></div>
     </div>
 
-    <div class="receipt-card" id="receiptCard">
-      <img src="images/ganesha.png" alt="Ganesh" class="ganesha-img">
-      <h2>Shree Swami Samarth Mitra Mandal</h2>
-      <p><strong>Reg No.:</strong> Maha.741/2003/Pune</p>
-      <hr>
-      <div class="field"><strong>Receipt Number:</strong> <span id="receiptNo">___</span></div>
-      <div class="field"><strong>Date:</strong> <span id="date">___</span></div>
-      <div class="field"><strong>Name:</strong> <span id="name">___</span></div>
-      <div class="field"><strong>Amount:</strong> ₹<span id="amount">___</span></div>
-      <div class="field"><strong>Receiver:</strong> <span id="receiver">___</span></div>
-      <div class="field"><strong>Status:</strong> <span id="status">___</span></div>
-      <p class="footer-text">Thank you for your generous support!</p>
+    <div class="receipt-container" id="receiptContainer" style="display:none;">
+      <img src="images/pavti.png" alt="Receipt" class="receipt-bg">
+      <div class="field-label receipt-no">Receipt No: <span class="field-value" id="receiptNoField">___</span></div>
+      <div class="field-label date">Date: <span class="field-value" id="dateField">__/__/____</span></div>
+      <div class="field-label name">Name: <span class="field-value" id="nameField">__________</span></div>
+      <div class="field-label amount">Amount: ₹<span class="field-value" id="amountField">____</span></div>
+      <div class="field-label receiver">Receiver: <span class="field-value" id="receiverField">__________</span></div>
+      <div class="field-label status">Status: <span class="field-value" id="statusField">__________</span></div>
     </div>
 
     <div class="social-card">
       <h2>Follow Us</h2>
-      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr" target="_blank">Instagram</a></p>
+      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr"
+          target="_blank">Instagram</a></p>
     </div>
   </section>
 
@@ -256,11 +284,11 @@
     }
 
     function checkReceipt() {
-      var receipt = document.getElementById("receiptInput").value.trim();
-      var errorMsg = document.getElementById("errorMsg");
-      var card = document.getElementById("receiptCard");
+      const receipt = document.getElementById("receiptInput").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+      const container = document.getElementById("receiptContainer");
       errorMsg.innerHTML = "";
-      card.style.display = "none";
+      container.style.display = "none";
 
       if (!receipt) {
         errorMsg.innerHTML = "Please enter a receipt number.";
@@ -275,14 +303,14 @@
           if (data.error) {
             errorMsg.innerHTML = "❌ " + data.error;
           } else {
-            document.getElementById("receiptNo").innerText = data.ReceiptNumber || "___";
-            document.getElementById("date").innerText = data.Date || "___";
-            document.getElementById("name").innerText = data.Name || "___";
-            document.getElementById("amount").innerText = data.Amount || "___";
-            document.getElementById("receiver").innerText = data.Receiver || "___";
-            document.getElementById("status").innerText = data.Status || "___";
+            document.getElementById("receiptNoField").innerText = data.ReceiptNumber || "___";
+            document.getElementById("dateField").innerText = data.Date || "__/__/____";
+            document.getElementById("nameField").innerText = data.Name || "__________";
+            document.getElementById("amountField").innerText = data.Amount || "____";
+            document.getElementById("receiverField").innerText = data.Receiver || "__________";
+            document.getElementById("statusField").innerText = data.Status || "__________";
 
-            card.style.display = "block";
+            container.style.display = "inline-block";
             errorMsg.innerHTML = "";
           }
         })
@@ -293,4 +321,5 @@
   </script>
 
 </body>
+
 </html>

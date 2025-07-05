@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -84,7 +85,59 @@
       margin-top: 20px;
     }
 
-    /* Responsive Styles */
+    .accordion {
+      background-color: #fff;
+      color: #333;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: background-color 0.3s, transform 0.3s;
+      border-radius: 5px;
+      margin-top: 10px;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .accordion:hover {
+      background-color: #ffecd9;
+      transform: scale(1.02);
+    }
+
+    .panel {
+      padding: 0 15px;
+      display: none;
+      background-color: #fff;
+      overflow: hidden;
+      border-radius: 0 0 5px 5px;
+      margin-bottom: 10px;
+    }
+
+    .booklet-link {
+      background: linear-gradient(135deg, #ff99cc, #ffccff);
+      border: 2px solid #ff66cc;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .booklet-link a {
+      text-decoration: none;
+      color: #cc007a;
+      font-weight: bold;
+      font-size: 20px;
+      transition: color 0.3s;
+    }
+
+    .booklet-link a:hover {
+      color: #ff3399;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       .nav-links {
         display: none;
@@ -101,6 +154,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -123,22 +177,134 @@
   <section>
     <h2>Our Journey</h2>
     <p>
-      Shree Swami Samarth Mitra Mandal was established on 13 June 2003 with a mission to unite the community through devotion and service. Starting with a small group of dedicated devotees, we have now grown into a large family committed to preserving and spreading cultural and spiritual values.
+      Shree Swami Samarth Mitra Mandal was founded on 13 June 2003 by Late Rajendra Shamrao Sumbre with a visionary
+      mission to bring the entire community of Sumbrenagar, Waki Khurd together through devotion, unity, and service. He
+      registered the organization with Registration No. Maha.741/2003/Pune to officially establish this spirit of
+      togetherness and cultural values. With unwavering dedication, he envisioned that this Mandal would grow into a
+      strong pillar of community bonding and cultural pride in the future. Starting with a small group of devoted
+      members, the Mandal has now expanded into a large family committed to preserving and spreading spiritual and
+      cultural heritage, fulfilling his dream and laying a strong foundation for generations to come.
     </p>
 
     <h2>Our Purpose</h2>
     <p>
-      The main purpose of our mandal is to celebrate Ganesh Utsav with grandeur and devotion while engaging in various charitable and social welfare activities throughout the year. We aim to inspire the younger generation to uphold our traditions and serve society selflessly.
+      The main purpose of our Mandal is to celebrate Ganesh Utsav with grandeur and deep devotion, while also actively
+      engaging in various charitable and social welfare activities throughout the year. Alongside Ganesh Utsav, we also
+      proudly celebrate Navratri Utsav, Shivjanm Utsav, and Dahi Handi, all of which bring the community together in a
+      spirit of joy, unity, and cultural pride. Inspired by the vision of Chhatrapati Shivaji Maharaj — a devoted
+      follower of Lord Ganesha and Jagdamba — who dreamed of seeing this land flourish as a stronghold of saffron, Hindu
+      faith, and righteous values, our Mandal strives to instill these ideals in the younger generation. We aim to
+      nurture a deep sense of devotion, unity, and service among the youth so that they carry forward the legacy of
+      protecting and uplifting our traditions for generations to come.
     </p>
 
     <h2>Our Members</h2>
     <p>
-      Our mandal consists of enthusiastic and dedicated members who work tirelessly to organize events and activities. The core committee includes President, Vice President, Treasurer, Secretary, and multiple volunteers who contribute in planning, decorations, cultural programs, and community services.
+      Our Karyakartas are the true pillars and heartbeat of our Mandal. Without their tireless efforts, unwavering
+      dedication, and selfless service, the Mandal would not be what it is today. Whether in moments of joy or times of
+      sorrow, they stand together like a united family, supporting each other and the entire community. These devoted
+      members work hand in hand, meticulously planning and executing every program to perfection — from intricate
+      decorations and heartfelt rituals to inspiring cultural events and impactful social activities. Their passion and
+      commitment transform every celebration into a soulful experience and keep the spirit of unity and devotion alive
+      throughout the year. They embody the very essence of "seva" (selfless service), and through their love and hard
+      work, they continue to uphold and strengthen the legacy of our Mandal.
     </p>
 
-    <p>
-      Each member plays an important role, and we welcome everyone who wishes to join our mission and serve with devotion and love.
-    </p>
+    <h2>Festivals We Celebrate</h2>
+
+    <button class="accordion">Ganesh Utsav</button>
+    <div class="panel">
+      <p>Ganesh Utsav is the heart and soul of our Mandal, celebrated with unmatched devotion and enthusiasm.
+        Beautifully crafted idols, mesmerizing decorations, vibrant aartis, and cultural programs unite the entire
+        community to welcome and honor Lord Ganesha as the remover of obstacles and the harbinger of joy.</p>
+    </div>
+
+    <button class="accordion">Navratri Utsav</button>
+    <div class="panel">
+      <p>During Navratri, we celebrate the divine feminine energy with devotion and vibrant festivities. The Mandal
+        organizes Garba nights, daily poojas, and cultural programs that bring the community together in dance, music,
+        and spiritual bliss, fostering unity and devotion among all age groups.</p>
+    </div>
+
+    <button class="accordion">Shivjanm Utsav</button>
+    <div class="panel">
+      <p>Shivjanm Utsav commemorates the birth of the great warrior king Chhatrapati Shivaji Maharaj. We honor his
+        courage, vision, and devotion through inspiring speeches, cultural performances, and community activities that
+        remind us of our rich heritage and valorous past.</p>
+    </div>
+
+    <button class="accordion">Gokulashtami</button>
+    <div class="panel">
+      <p>Gokulashtami, also known as Dahi Handi, celebrates Lord Krishna’s playful and divine spirit. Our Mandal
+        organizes the traditional human pyramid competitions and joyous festivities, spreading cheer and reinforcing the
+        values of teamwork, courage, and devotion.</p>
+    </div>
+
+    <button class="accordion">Holi</button>
+    <div class="panel">
+      <p>Holi, the festival of colors, is celebrated to promote joy, togetherness, and the triumph of good over evil.
+        Members come together to play colors, share sweets, and rejoice in an atmosphere of love and harmony,
+        strengthening bonds within the community.</p>
+    </div>
+
+    <div class="booklet-link">
+      <p>Download our Mandal’s detailed booklet for year 2023-24 :</p>
+      <a href="documents/Ahval-23-24.pdf" download>📄 Download 2023-24 Booklet</a>
+    </div>
+
+    <div class="booklet-link">
+      <p>2024-25 Booklet will be uploaded on 15 August 2025</p>
+      <!-- <a href="documents/Ahval-24-25.pdf" download>📄 Download Mandal Booklet</a> -->
+    </div>
+
+    <h2 style="text-align:center; margin-top: 40px;">Committee for 2025 - 2026</h2>
+    <p style="text-align:center;">This is the elected body for the year 2025 - 2026</p>
+
+    <div style="overflow-x:auto;">
+      <table
+        style="width:100%; border-collapse: collapse; margin: 20px auto; max-width: 700px; background-color: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.1); border-radius: 10px;">
+        <thead style="background: #ff9933; color: white;">
+          <tr style="text-align: center;">
+            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Post</th>
+            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Name</th>
+            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Contact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="text-align: center;">
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">President</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Hritik Vahile</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">9011457779</td>
+          </tr>
+          <tr style="text-align: center; background-color: #f9f3e9;">
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Vice President</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Shubham Sumbre</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">7558555771</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Treasurer</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Yadnesh Sumbre</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">7040191010</td>
+          </tr>
+          <tr style="text-align: center; background-color: #f9f3e9;">
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Joint Treasurer</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Gaurav Shete</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">7397874647</td>
+          </tr>
+          <tr style="text-align: center;">
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Secretary</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">Sumit Shinde</td>
+            <td style="padding: 10px; border-bottom: 1px solid #eee;">7385950508</td>
+          </tr>
+          <tr style="text-align: center; background-color: #f9f3e9;">
+            <td style="padding: 10px;">Event Head</td>
+            <td style="padding: 10px;">Vicky Kelkar</td>
+            <td style="padding: 10px;">9922674322</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
   </section>
 
   <footer>
@@ -149,7 +315,21 @@
     function toggleMenu() {
       document.getElementById('navLinks').classList.toggle('active');
     }
+
+    const accordions = document.getElementsByClassName("accordion");
+    for (let i = 0; i < accordions.length; i++) {
+      accordions[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
   </script>
 
 </body>
+
 </html>

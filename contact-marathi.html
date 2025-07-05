@@ -3,13 +3,14 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>संपर्क व देणगी - श्री स्वामी समर्थ मित्र मंडळ</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
       background: #f9f3e9;
+      margin: 0;
+      padding: 0;
       color: #333;
     }
 
@@ -30,6 +31,7 @@
       background: #cc7a00;
       padding: 12px;
       text-align: center;
+      position: relative;
     }
 
     .nav-links {
@@ -63,7 +65,7 @@
     }
 
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
@@ -75,7 +77,7 @@
       background-color: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       margin: 20px auto;
     }
 
@@ -101,10 +103,70 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      font-size: 16px;
     }
 
     button:hover {
       background: #ff9933;
+    }
+
+    .receipt-container {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 30px;
+    }
+
+    .receipt-bg {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .field-label {
+      position: absolute;
+      color: #000;
+      font-weight: bold;
+      font-size: 18px;
+      white-space: nowrap;
+    }
+
+    .field-value {
+      font-weight: normal;
+      margin-left: 5px;
+    }
+
+    /* Adjust positions */
+    .receipt-no {
+      top: 310px;
+      left: 320px;
+    }
+
+    .date {
+      top: 340px;
+      left: 320px;
+    }
+
+    .name {
+      top: 370px;
+      left: 320px;
+    }
+
+    .amount {
+      top: 400px;
+      left: 320px;
+    }
+
+    .receiver {
+      top: 430px;
+      left: 320px;
+    }
+
+    .status {
+      top: 460px;
+      left: 320px;
     }
 
     footer {
@@ -113,45 +175,6 @@
       text-align: center;
       padding: 15px;
       margin-top: 20px;
-    }
-
-    .receipt-card {
-      background: linear-gradient(to bottom right, #ffe6f0, #fff);
-      border: 3px solid #ff66cc;
-      padding: 20px;
-      max-width: 500px;
-      margin: 30px auto;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      display: none;
-      text-align: center;
-    }
-
-    .receipt-card h2 {
-      color: #cc007a;
-      margin-top: 10px;
-    }
-
-    .ganesha-img {
-      width: 120px;
-      margin-bottom: 10px;
-    }
-
-    .field {
-      text-align: left;
-      margin: 10px 0;
-      font-size: 18px;
-      padding: 5px 10px;
-    }
-
-    .field strong {
-      color: #99004d;
-    }
-
-    .footer-text {
-      margin-top: 15px;
-      font-size: 14px;
-      color: #555;
     }
 
     #errorMsg {
@@ -164,11 +187,16 @@
         display: none;
         flex-direction: column;
       }
+
       .nav-links.active {
         display: flex;
       }
+
       .menu-toggle {
         display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
       }
     }
   </style>
@@ -196,18 +224,18 @@
   <section>
     <div class="contact-card">
       <h2>आमच्याशी संपर्क करा</h2>
-      <p><strong>पत्ता:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">श्री स्वामी समर्थ मित्र मंडळ, सुम्ब्रेनगर, वाकी खुर्द, तालुका खेड, जिल्हा पुणे, 410501</a>.</p>
-      <p><strong>मोबाईल:</strong> <a href="tel:7397874647">7057705792</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">WhatsApp वर चॅट करा</a></p>
+      <p><strong>पत्ता:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">श्री स्वामी समर्थ मित्र मंडळ, सुम्ब्रे नगर, वाकी खुर्द, ता. खेड, जि. पुणे, 410501</a>.</p>
+      <p><strong>मोबाईल:</strong> <a href="tel:7057705792">7057705792</a></p>
+      <p><strong>व्हॉट्सअॅप:</strong> <a href="https://wa.me/917057705792" target="_blank">व्हॉट्सअॅप वर चॅट करा</a></p>
       <p><strong>ई-मेल:</strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
     </div>
 
     <div class="donate-card">
-      <h2>आम्हाला समर्थन द्या</h2>
-      <p>आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीमय आणि सामाजिक उपक्रम राबवण्यात मदत करते. तुमच्या सहकार्याबद्दल धन्यवाद!</p>
-      <p><strong>बँक तपशील:</strong></p>
+      <h2>आमच्या मंडळाला साथ द्या</h2>
+      <p>आपले उदार योगदान आम्हाला सांस्कृतिक, भक्तीमय व सामाजिक उपक्रम आयोजित करण्यास मदत करते. तुमच्या पाठिंब्याबद्दल धन्यवाद!</p>
+      <p><strong>देणगीसाठी बँक तपशील:</strong></p>
       <p>
-        खातेदाराचे नाव: श्री गौरव अनिल शेटे<br>
+        खातेधारक नाव: श्री गौरव अनिल शेटे<br>
         खाते क्रमांक: 157057705792<br>
         IFSC कोड: INDB0000829<br>
         बँक नाव: इंडसइंड बँक<br>
@@ -215,29 +243,25 @@
       </p>
       <p><strong>UPI ID:</strong> shreeswamisamarth@indie</p>
       <p><strong>QR कोड स्कॅन करा:</strong></p>
-      <img src="images/vargani_qr.jpeg" alt="QR कोड" class="qr-image">
+      <img src="images/vargani_qr.jpeg" alt="देणगी QR कोड" class="qr-image">
     </div>
 
     <div class="check-card">
-      <h2>तुमची देणगी तपासा</h2>
-      <input type="text" id="receiptInput" placeholder="पावती क्रमांक टाका">
+      <h2>तुमची पावती तपासा व दाखवा</h2>
+      <input type="text" id="receiptInput" placeholder="पावती क्रमांक प्रविष्ट करा">
       <br>
-      <button onclick="checkReceipt()">तपासा</button>
+      <button onclick="checkReceipt()">शोधा व दाखवा</button>
       <div id="errorMsg"></div>
     </div>
 
-    <div class="receipt-card" id="receiptCard">
-      <img src="images/ganesha.png" alt="गणेश" class="ganesha-img">
-      <h2>श्री स्वामी समर्थ मित्र मंडळ</h2>
-      <p><strong>नोंदणी क्र.:</strong> Maha.741/2003/Pune</p>
-      <hr>
-      <div class="field"><strong>पावती क्रमांक:</strong> <span id="receiptNo">___</span></div>
-      <div class="field"><strong>दिनांक:</strong> <span id="date">___</span></div>
-      <div class="field"><strong>नाव:</strong> <span id="name">___</span></div>
-      <div class="field"><strong>रक्कम:</strong> ₹<span id="amount">___</span></div>
-      <div class="field"><strong>स्वीकारणारे:</strong> <span id="receiver">___</span></div>
-      <div class="field"><strong>स्थिती:</strong> <span id="status">___</span></div>
-      <p class="footer-text">तुमच्या उदार सहकार्याबद्दल धन्यवाद!</p>
+    <div class="receipt-container" id="receiptContainer" style="display:none;">
+      <img src="images/pavti.png" alt="पावती" class="receipt-bg">
+      <div class="field-label receipt-no">पावती क्र.: <span class="field-value" id="receiptNoField">___</span></div>
+      <div class="field-label date">दिनांक: <span class="field-value" id="dateField">__/__/____</span></div>
+      <div class="field-label name">नाव: <span class="field-value" id="nameField">__________</span></div>
+      <div class="field-label amount">रक्कम: ₹<span class="field-value" id="amountField">____</span></div>
+      <div class="field-label receiver">स्वीकर्ता: <span class="field-value" id="receiverField">__________</span></div>
+      <div class="field-label status">स्थिती: <span class="field-value" id="statusField">__________</span></div>
     </div>
 
     <div class="social-card">
@@ -247,7 +271,7 @@
   </section>
 
   <footer>
-    &copy; २००३ - २०२५ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
+    &copy; 2003 - 2025 श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.
   </footer>
 
   <script>
@@ -256,14 +280,14 @@
     }
 
     function checkReceipt() {
-      var receipt = document.getElementById("receiptInput").value.trim();
-      var errorMsg = document.getElementById("errorMsg");
-      var card = document.getElementById("receiptCard");
+      const receipt = document.getElementById("receiptInput").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+      const container = document.getElementById("receiptContainer");
       errorMsg.innerHTML = "";
-      card.style.display = "none";
+      container.style.display = "none";
 
       if (!receipt) {
-        errorMsg.innerHTML = "कृपया पावती क्रमांक टाका.";
+        errorMsg.innerHTML = "कृपया पावती क्रमांक प्रविष्ट करा.";
         return;
       }
 
@@ -275,22 +299,23 @@
           if (data.error) {
             errorMsg.innerHTML = "❌ " + data.error;
           } else {
-            document.getElementById("receiptNo").innerText = data.ReceiptNumber || "___";
-            document.getElementById("date").innerText = data.Date || "___";
-            document.getElementById("name").innerText = data.Name || "___";
-            document.getElementById("amount").innerText = data.Amount || "___";
-            document.getElementById("receiver").innerText = data.Receiver || "___";
-            document.getElementById("status").innerText = data.Status || "___";
+            document.getElementById("receiptNoField").innerText = data.ReceiptNumber || "___";
+            document.getElementById("dateField").innerText = data.Date || "__/__/____";
+            document.getElementById("nameField").innerText = data.Name || "__________";
+            document.getElementById("amountField").innerText = data.Amount || "____";
+            document.getElementById("receiverField").innerText = data.Receiver || "__________";
+            document.getElementById("statusField").innerText = data.Status || "__________";
 
-            card.style.display = "block";
+            container.style.display = "inline-block";
             errorMsg.innerHTML = "";
           }
         })
         .catch(error => {
-          errorMsg.innerHTML = "डेटा मिळवताना त्रुटी.";
+          errorMsg.innerHTML = "डेटा मिळवताना त्रुटी आली.";
         });
     }
   </script>
 
 </body>
+
 </html>
