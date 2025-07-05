@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Swami Samarth Mitra Mandal - Home</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f9f3e9;
+      text-align: center;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #ff9933;
+      color: white;
+      padding: 10px;
+      text-align: center;
+      position: relative;
+    }
+
+    .logo {
+      width: 120px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    nav {
+      background: #cc7a00;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    nav a {
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      color: #ffd699;
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: scale(1.1);
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+      color: white;
+      padding: 8px 12px;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+      padding: 20px;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    footer {
+      background: #ff9933;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    .main-image {
+      width: 100%;
+      max-width: 700px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.5s;
+    }
+
+    .main-image:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      color: #cc7a00;
+      border-bottom: 3px solid #ff9933;
+      padding-bottom: 10px;
+      margin-top: 20px;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px dashed #ff9933;
+      margin: 10px auto;
+      width: 60%;
+    }
+
+    p {
+      text-align: justify;
+      margin-top: 20px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <img src="images/swami_logo-removebg-preview.png" alt="Mandal Logo" class="logo">
+    <h1>Shree Swami Samarth Mitra Mandal</h1>
+    <h4>Registration No. - Maha.741/2003/Pune</h4>
+    <h3>Established - 13 June 2003</h3>
+  </header>
+
+  <nav>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index-english.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact & Donate</a>
+      <a href="internal.html">Karyakarta Login</a>
+      <a href="index.html" style="float:right;">मराठी</a>
+    </div>
+  </nav>
+
+  <section id="welcome">
+    <h2>Welcome to Shree Swami Samarth Mitra Mandal</h2>
+    <img src="images/WhatsApp Image 2025-07-03 at 16.33.21.jpeg" alt="Ganesh Idol" class="main-image">
+    <p>
+      Founded in 2003, Shree Swami Samarth Mitra Mandal is dedicated to promoting Hindu devotion, unity, and cultural
+      values through vibrant celebrations and various community initiatives. Located in Sumbrenagar, Waki Khurd, Pune,
+      our Mandal brings together devotees and volunteers with love and enthusiasm.
+    </p>
+    <p>
+      Throughout the year, we organize Ganesh Utsav, Navratri Utsav, Shivjayanti Utsav, Dahihandi Utsav, health camps,
+      blood donation drives, tree plantation drives, and many other activities that inspire the spirit of togetherness
+      and service.
+    </p>
+    <hr>
+  </section>
+
+  <section id="history">
+    <h2>Ganesh Utsav: The Spirit of Maharashtra</h2>
+    <img src="images/ganesha-utsav.jpg" alt="Ganesh Utsav" class="main-image">
+    <p>
+      <b>Indian freedom fighter Lokmanya Bal Gangadhar Tilak</b> championed Ganesh Utsav as a means to circumvent the
+      colonial British government ban on Hindu gatherings through its anti-public assembly legislation in 1892.
+      Lokmanya Tilak started the festival in Pune and Girgaon, Mumbai.
+    </p>
+    <p>
+      Lord Ganesha is worshipped as the remover of obstacles and the god of wisdom. During Ganesh Utsav, beautifully
+      crafted idols are installed in pandals, daily aartis are performed, and cultural activities engage all age groups.
+      The festival promotes unity, devotion, and social welfare.
+    </p>
+    <p>
+      Today, Ganesh Utsav symbolizes not only spiritual devotion but also social harmony and cultural pride, making it
+      one of the most celebrated and beloved festivals in Maharashtra.
+    </p>
+    <hr>
+  </section>
+
+  <section id="shivaji">
+    <h2>Chhatrapati Shivaji Maharaj and Ganpati Bappa</h2>
+    <img src="images/shivba.jpg" alt="Shivba" class="main-image">
+    <p>
+      <b>Chhatrapati Shivaji Maharaj</b>, the great Maratha warrior king, is revered not only for his valor and strategic
+      brilliance but also for his deep devotion to Hindu dharma and culture. Though the public celebration of Ganesh
+      Utsav was popularized later by Lokmanya Tilak, it is said that Shivaji Maharaj held immense faith in Lord Ganesh
+      and would seek Ganpati Bappa's blessings before important battles and missions. For Maharashtrians, Ganpati Bappa
+      symbolizes courage, wisdom, and the power to overcome obstacles — qualities that perfectly reflect Shivaji
+      Maharaj's life and legacy. Together, the devotion to Ganesh and the spirit of Shivaji Maharaj inspire us to uphold
+      bravery, unity, and unwavering dedication to society and the motherland.
+    </p>
+    <hr>
+  </section>
+
+  <footer>
+    &copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navLinks').classList.toggle('active');
+    }
+
+    // Animation on scroll
+    const sections = document.querySelectorAll('section');
+    const options = { threshold: 0.2 };
+
+    const observer = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      });
+    }, options);
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+
+</body>
+
+</html>
