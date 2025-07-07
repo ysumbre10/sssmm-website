@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact & Donate - Shree Swami Samarth Mitra Mandal</title>
   <style>
     body {
@@ -141,12 +141,35 @@
     }
 
     /* Desktop positions */
-    .receipt-no { top: 310px; left: 320px; }
-    .date { top: 340px; left: 320px; }
-    .name { top: 370px; left: 320px; }
-    .amount { top: 400px; left: 320px; }
-    .receiver { top: 430px; left: 320px; }
-    .status { top: 460px; left: 320px; }
+    .receipt-no {
+      top: 310px;
+      left: 320px;
+    }
+
+    .date {
+      top: 340px;
+      left: 320px;
+    }
+
+    .name {
+      top: 370px;
+      left: 320px;
+    }
+
+    .amount {
+      top: 400px;
+      left: 320px;
+    }
+
+    .receiver {
+      top: 430px;
+      left: 320px;
+    }
+
+    .status {
+      top: 460px;
+      left: 320px;
+    }
 
     footer {
       background: #ff9933;
@@ -208,15 +231,18 @@
   <section>
     <div class="contact-card">
       <h2>Contact Us</h2>
-      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">Shree Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Taluka Khed, District Pune, 410501</a>.</p>
+      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">Shree
+          Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Taluka Khed, District Pune, 410501</a>.</p>
       <p><strong>Mobile:</strong> <a href="tel:7057705792">7057705792</a></p>
       <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">Chat on WhatsApp</a></p>
-      <p><strong>Email:</strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
+      <p><strong>Email:</strong> <a
+          href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
     </div>
 
     <div class="donate-card">
       <h2>Support Our Mandal</h2>
-      <p>Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you for supporting our mission!</p>
+      <p>Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you
+        for supporting our mission!</p>
       <p><strong>Bank Details for Donation:</strong></p>
       <p>
         Account Holder Name: Mr Gaurav Anil Shete<br>
@@ -250,7 +276,8 @@
 
     <div class="social-card">
       <h2>Follow Us</h2>
-      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr" target="_blank">Instagram</a></p>
+      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr"
+          target="_blank">Instagram</a></p>
     </div>
   </section>
 
@@ -277,7 +304,7 @@
 
       errorMsg.innerHTML = "Loading...";
 
-      fetch("https://script.google.com/macros/s/AKfycbwrfWQp5oa112jX-p2N395LKqwE9xr_I-IKKBiJcPFpViZk51GCntVIHCpFjDdAjOU2Mw/exec?receipt=" + encodeURIComponent(receipt))
+      fetch("https://script.google.com/macros/s/AKfycbyqYOJ2ZstrADrf_LwgAbGqUOFKz_2ckT7l9rUxGm0XO083j0QXD0BHXv1e31wUOvC6Pw/exec?receipt=" + encodeURIComponent(receipt))
         .then(response => response.json())
         .then(data => {
           if (data.error) {

@@ -45,8 +45,8 @@
             padding: 8px 12px;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s, transform 0.3s;
             border-radius: 5px;
+            transition: 0.3s;
         }
 
         nav a:hover {
@@ -72,7 +72,8 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
         }
 
-        input[type="password"] {
+        input[type="password"],
+        input[type="text"] {
             width: 90%;
             padding: 10px;
             margin-top: 10px;
@@ -92,6 +93,15 @@
 
         button:hover {
             background: #ff9933;
+        }
+
+        .details-box {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .details-box p {
+            margin: 8px 0;
         }
 
         a.form-link {
@@ -115,7 +125,6 @@
             margin-top: 40px;
         }
 
-        /* Responsive nav */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -168,6 +177,12 @@
             2025 Form)</a>
         <a class="form-link" href="https://forms.gle/RexZgH51ThH3fm1J8" target="_blank">खर्च २०२५ अर्ज (Expenditure 2025
             Form)</a>
+
+        <h2 style="margin-top: 40px;">Search & Edit Donation Details</h2>
+        <input type="text" id="receiptSearch" placeholder="Enter Receipt Number">
+        <br>
+        <button onclick="searchDetails()">Search</button>
+        <div id="detailsBox" class="details-box"></div>
     </div>
 
     <footer>
@@ -181,12 +196,51 @@
 
         function checkPassword() {
             const code = document.getElementById("accessCode").value;
-            if (code === "mandal123") {
+            if (code === "1010") {
                 document.getElementById("login-box").style.display = "none";
                 document.getElementById("form-links").style.display = "block";
             } else {
                 alert("Incorrect code. Please try again.");
             }
+        }
+
+        function searchDetails() {
+            const receipt = document.getElementById("receiptSearch").value.trim();
+            const box = document.getElementById("detailsBox");
+            box.innerHTML = "Loading...";
+
+            if (!receipt) {
+                box.innerHTML = "Please enter a receipt number.";
+                return;
+            }
+
+            fetch("https://script.google.com/macros/s/AKfycbyqYOJ2ZstrADrf_LwgAbGqUOFKz_2ckT7l9rUxGm0XO083j0QXD0BHXv1e31wUOvC6Pw/exec?receipt=" + encodeURIComponent(receipt))
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        box.innerHTML = "❌ " + data.error;
+                    } else {
+                        let editLinkHTML = "";
+                        if (data.EditLink && data.EditLink.startsWith("http")) {
+                            editLinkHTML = `<a class="form-link" href="${data.EditLink}" target="_blank">Edit This Entry</a>`;
+                        } else {
+                            editLinkHTML = "<p>No edit link available.</p>";
+                        }
+
+                        box.innerHTML = `
+              <p><strong>Receipt Number:</strong> ${data.ReceiptNumber}</p>
+              <p><strong>Date:</strong> ${data.Date}</p>
+              <p><strong>Name:</strong> ${data.Name}</p>
+              <p><strong>Amount:</strong> ₹${data.Amount}</p>
+              <p><strong>Receiver:</strong> ${data.Receiver}</p>
+              <p><strong>Status:</strong> ${data.Status}</p>
+              ${editLinkHTML}
+            `;
+                    }
+                })
+                .catch(error => {
+                    box.innerHTML = "Error fetching data.";
+                });
         }
     </script>
 
