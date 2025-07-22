@@ -6,27 +6,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>कार्यकर्ता लॉगिन - श्री स्वामी समर्थ मित्र मंडळ</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f9f3e9; color: #333; line-height: 1.6; text-align: center; }
-        header { background: #ff9933; color: white; padding: 10px; }
-        .logo { width: 120px; display: block; margin: 0 auto 10px; }
-        nav { background: #cc7a00; padding: 12px; }
-        .nav-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; }
-        nav a { color: white; padding: 8px 12px; text-decoration: none; font-weight: bold; border-radius: 5px; transition: 0.3s; }
-        nav a:hover { color: #ffd699; background-color: rgba(255, 255, 255, 0.1); transform: scale(1.1); }
-        .menu-toggle { display: none; font-size: 26px; cursor: pointer; color: white; padding: 8px 12px; }
-        .container { max-width: 500px; margin: 40px auto; padding: 25px; background: white; border-radius: 10px; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); }
-        input[type="password"], input[type="text"] { width: 90%; padding: 10px; margin-top: 10px; border-radius: 5px; border: 1px solid #ccc; }
-        button { padding: 10px 20px; background: #cc7a00; color: white; border: none; border-radius: 5px; margin-top: 15px; cursor: pointer; }
-        button:hover { background: #ff9933; }
-        .details-box { margin-top: 20px; text-align: left; }
-        .details-box p { margin: 8px 0; }
-        a.form-link { display: block; margin: 15px 0; font-size: 17px; color: #cc7a00; text-decoration: none; font-weight: bold; }
-        a.form-link:hover { color: #ff9933; }
-        footer { background: #ff9933; color: white; text-align: center; padding: 15px; margin-top: 40px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: #f9f3e9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #ff9933;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 120px;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        nav {
+            background: #cc7a00;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav a {
+            color: white;
+            padding: 8px 12px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd699;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 26px;
+            cursor: pointer;
+            color: white;
+            padding: 8px 12px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 25px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="password"],
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #cc7a00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ff9933;
+        }
+
+        .details-box {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .details-box .entry {
+            background: #fff;
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .details-box p {
+            margin: 6px 0;
+        }
+
+        a.form-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 16px;
+            color: #cc7a00;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.form-link:hover {
+            color: #ff9933;
+        }
+
+        footer {
+            background: #ff9933;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; align-items: center; }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -53,19 +173,25 @@
     </nav>
 
     <div class="container" id="login-box">
-        <h2>प्रवेश कोड टाका</h2>
-        <input type="password" id="accessCode" placeholder="पासवर्ड टाका">
+        <h2>प्रवेश संकेतशब्द टाका</h2>
+        <input type="password" id="accessCode" placeholder="संकेतशब्द लिहा">
         <br>
         <button onclick="checkPassword()">सबमिट करा</button>
     </div>
 
     <div class="container" id="form-links" style="display: none;">
         <h2>२०२५ साठी फॉर्म्स</h2>
-        <a class="form-link" href="https://forms.gle/QnQzCDJRQm1u6nqm7" target="_blank">वर्गणी/देणगी २०२५ अर्ज</a>
-        <a class="form-link" href="https://forms.gle/RexZgH51ThH3fm1J8" target="_blank">खर्च २०२५ अर्ज</a>
+        <a class="form-link" href="https://forms.gle/QnQzCDJRQm1u6nqm7" target="_blank">वर्गणी/देणगी फॉर्म</a><br>
+        <a class="form-link" href="https://forms.gle/RexZgH51ThH3fm1J8" target="_blank">खर्च फॉर्म</a>
 
-        <h2 style="margin-top: 40px;">पावती शोधा व संपादन करा</h2>
-        <input type="text" id="receiptSearch" placeholder="पावती क्रमांक टाका">
+        <h2 style="margin-top: 40px;">देणगी तपशील शोधा व संपादित करा</h2>
+        <p style="font-style: italic; color: #555; margin-bottom: 5px;">खालीलपैकी एकाने शोधा:</p>
+
+        <input type="text" id="receiptSearch" placeholder="🔎 पावती क्रमांक">
+        <p style="text-align:center; margin: 5px 0;">किंवा</p>
+        <input type="text" id="nameSearch" placeholder="🔎 देणगीदाराचे नाव">
+        <p style="text-align:center; margin: 5px 0;">किंवा</p>
+        <input type="text" id="mobileSearch" placeholder="🔎 मोबाईल क्रमांक">
         <br>
         <button onclick="searchDetails()">शोधा</button>
         <div id="detailsBox" class="details-box"></div>
@@ -86,49 +212,60 @@
                 document.getElementById("login-box").style.display = "none";
                 document.getElementById("form-links").style.display = "block";
             } else {
-                alert("चुकीचा पासवर्ड. कृपया पुन्हा प्रयत्न करा.");
+                alert("चुकीचा संकेतशब्द. कृपया पुन्हा प्रयत्न करा.");
             }
         }
 
         function searchDetails() {
             const receipt = document.getElementById("receiptSearch").value.trim();
+            const name = document.getElementById("nameSearch").value.trim();
+            const mobile = document.getElementById("mobileSearch").value.trim();
             const box = document.getElementById("detailsBox");
-            box.innerHTML = "लोड होत आहे...";
+            box.innerHTML = "लोड करत आहे...";
 
-            if (!receipt) {
-                box.innerHTML = "कृपया पावती क्रमांक टाका.";
+            if (!receipt && !name && !mobile) {
+                box.innerHTML = "कृपया शोधण्यासाठी किमान एक माहिती द्या.";
                 return;
             }
 
-            fetch("https://script.google.com/macros/s/AKfycbwo1ShONdYURalTbN6cmB9dPT0XYQRVvhANxnlO3FoiYwAzLMfCn7UG4rhaLijrClq3/exec?receipt=" + encodeURIComponent(receipt))
+            let url = "https://script.google.com/macros/s/AKfycbxIc41BTjodfBBasDb6OH1p9RgDSpYgYN49kmvqQQPFJUqVRqRI5vfL9TRp7Sgdh4N47w/exec?";
+            if (receipt) url += "receipt=" + encodeURIComponent(receipt) + "&";
+            if (name) url += "name=" + encodeURIComponent(name) + "&";
+            if (mobile) url += "mobile=" + encodeURIComponent(mobile);
+
+            fetch(url)
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
                         box.innerHTML = "❌ " + data.error;
-                    } else {
-                        let editLinkHTML = "";
-                        if (data.EditLink) {
-                            editLinkHTML = `<a class="form-link" href="${data.EditLink}" target="_blank">ही नोंद संपादित करा</a>`;
-                        } else {
-                            editLinkHTML = "<p>संपादन लिंक उपलब्ध नाही.</p>";
-                        }
+                    } else if (Array.isArray(data)) {
+                        box.innerHTML = "";
+                        data.forEach(entry => {
+                            const editLinkHTML = entry.EditLink && entry.EditLink.startsWith("http")
+                                ? `<a class="form-link" href="${entry.EditLink}" target="_blank">ही नोंद संपादित करा</a>`
+                                : "<p>संपादन लिंक उपलब्ध नाही.</p>";
 
-                        box.innerHTML = `
-                            <p><strong>पावती क्रमांक:</strong> ${data.ReceiptNumber}</p>
-                            <p><strong>तारीख:</strong> ${data.Date}</p>
-                            <p><strong>नाव:</strong> ${data.Name}</p>
-                            <p><strong>रक्कम:</strong> ₹${data.Amount}</p>
-                            <p><strong>स्वीकर्ता:</strong> ${data.Receiver}</p>
-                            <p><strong>स्थिती:</strong> ${data.Status}</p>
-                            ${editLinkHTML}
-                        `;
+                            box.innerHTML += `
+                <div class="entry">
+                  <p><strong>पावती क्रमांक:</strong> ${entry.ReceiptNumber}</p>
+                  <p><strong>दिनांक:</strong> ${entry.Date}</p>
+                  <p><strong>नाव:</strong> ${entry.Name}</p>
+                  <p><strong>मोबाईल:</strong> ${entry.Mobile}</p>
+                  <p><strong>रक्कम:</strong> ₹${entry.Amount}</p>
+                  <p><strong>स्वीकारकर्ता:</strong> ${entry.Receiver}</p>
+                  <p><strong>स्थिती:</strong> ${entry.Status}</p>
+                  ${editLinkHTML}
+                </div>
+              `;
+                        });
                     }
                 })
                 .catch(error => {
-                    box.innerHTML = "डेटा मिळवताना त्रुटी आली.";
+                    box.innerHTML = "माहिती मिळवताना त्रुटी आली.";
                 });
         }
     </script>
 
 </body>
+
 </html>
