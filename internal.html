@@ -214,7 +214,7 @@
                 return;
             }
 
-            fetch("https://script.google.com/macros/s/AKfycbyqYOJ2ZstrADrf_LwgAbGqUOFKz_2ckT7l9rUxGm0XO083j0QXD0BHXv1e31wUOvC6Pw/exec?receipt=" + encodeURIComponent(receipt))
+            fetch("https://script.google.com/macros/s/AKfycbwo1ShONdYURalTbN6cmB9dPT0XYQRVvhANxnlO3FoiYwAzLMfCn7UG4rhaLijrClq3/exec?receipt=" + encodeURIComponent(receipt))
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
