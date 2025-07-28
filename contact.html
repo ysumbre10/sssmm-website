@@ -198,12 +198,39 @@
         display: block;
       }
 
-      /* Override absolute positions for receipt fields on small screens */
+      /* Maintain absolute positioning and adjust layout for mobile */
       .field-label {
-        position: static;
-        display: block;
-        margin: 10px auto;
-        text-align: center;
+        font-size: 14px;
+      }
+
+      .receipt-no {
+        top: 55%;
+        left: 37%;
+      }
+
+      .date {
+        top: 62%;
+        left: 37%;
+      }
+
+      .name {
+        top: 69%;
+        left: 37%;
+      }
+
+      .amount {
+        top: 76%;
+        left: 37%;
+      }
+
+      .receiver {
+        top: 83%;
+        left: 37%;
+      }
+
+      .status {
+        top: 90%;
+        left: 37%;
       }
     }
   </style>
