@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -356,4 +356,177 @@
 
 </body>
 
+</html>
+ -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact & Donate - Shree Swami Samarth Mitra Mandal</title>
+  <style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f3e9; margin:0; color:#333; }
+    header { background:#ff9933; color:#fff; padding:10px; text-align:center; }
+    .logo { width:120px; display:block; margin:0 auto 10px; }
+    nav { background:#cc7a00; padding:12px; text-align:center; position:relative; }
+    .nav-links { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
+    nav a { color:#fff; padding:8px 12px; text-decoration:none; font-weight:bold; transition:color .3s, transform .3s; border-radius:5px; }
+    nav a:hover { color:#ffd699; background-color:rgba(255,255,255,.1); transform:scale(1.1); }
+    .menu-toggle { display:none; font-size:26px; cursor:pointer; color:#fff; padding:8px 12px; text-align:center; margin:0 auto; }
+    section { max-width:900px; margin:auto; padding:20px; }
+    .card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,.1); margin:20px auto; }
+    .qr-image { width:100%; max-width:400px; display:block; margin:10px auto; }
+    #receiptInput { width:90%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
+    button { padding:10px 20px; background:#cc7a00; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px; }
+    button:hover { background:#ff9933; }
+    .receipt-container { position:relative; display:inline-block; width:100%; max-width:800px; margin-top:30px; }
+    .receipt-bg { width:100%; display:block; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,.3); }
+    .field-label { position:absolute; color:#000; font-weight:bold; font-size:18px; white-space:nowrap; }
+    .field-value { font-weight:normal; margin-left:5px; }
+    /* Desktop overlay positions - adjust as per your image */
+    .receipt-no { top:310px; left:320px; }
+    .date       { top:340px; left:320px; }
+    .name       { top:370px; left:320px; }
+    .amount     { top:400px; left:320px; }
+    .receiver   { top:430px; left:320px; }
+    .status     { top:460px; left:320px; }
+    footer { background:#ff9933; color:#fff; text-align:center; padding:15px; margin-top:20px; }
+    #errorMsg { color:red; margin-top:10px; }
+    @media (max-width:768px){
+      .nav-links{display:none; flex-direction:column;}
+      .nav-links.active{display:flex;}
+      .menu-toggle{display:block;}
+      .field-label{font-size:14px;}
+      .receipt-no{ top:55%; left:37%; }
+      .date     { top:62%; left:37%; }
+      .name     { top:69%; left:37%; }
+      .amount   { top:76%; left:37%; }
+      .receiver { top:83%; left:37%; }
+      .status   { top:90%; left:37%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/swami_logo-removebg-preview.png" alt="Mandal Logo" class="logo">
+    <h1>Contact & Donate</h1>
+  </header>
+
+  <nav>
+    <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
+    <div class="nav-links" id="navLinks">
+      <a href="index-english.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="contact.html">Contact & Donate</a>
+      <a href="internal.html">Karyakarta Login</a>
+      <a href="index.html" style="float:right;">मराठी</a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="card">
+      <h2>Contact Us</h2>
+      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">Shree Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Taluka Khed, District Pune, 410501</a>.</p>
+      <p><strong>Mobile:</strong> <a href="tel:7057705792">7057705792</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">Chat on WhatsApp</a></p>
+      <p><strong>Email:</strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
+    </div>
+
+    <div class="card">
+      <h2>Support Our Mandal</h2>
+      <p>Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you for supporting our mission!</p>
+      <p><strong>Bank Details for Donation:</strong></p>
+      <p>
+        Account Holder Name: Mr Gaurav Anil Shete<br>
+        Account Number: 157057705792<br>
+        IFSC Code: INDB0000829<br>
+        Bank Name: IndusInd Bank<br>
+        Branch: Chakan, 0829, 410501
+      </p>
+      <p><strong>UPI ID:</strong> shreeswamisamarth@indie</p>
+      <p><strong>Scan QR to Donate:</strong></p>
+      <img src="images/vargani_qr.jpeg" alt="Donation QR Code" class="qr-image">
+    </div>
+
+    <div class="card">
+      <h2>Check & Show Your Receipt</h2>
+      <input type="text" id="receiptInput" placeholder="Enter Receipt Number">
+      <br>
+      <button onclick="checkReceipt()">Fetch & Show</button>
+      <div id="errorMsg"></div>
+    </div>
+
+    <div class="receipt-container" id="receiptContainer" style="display:none;">
+      <img src="images/pavti.png" alt="Receipt" class="receipt-bg">
+      <div class="field-label receipt-no">Receipt No: <span class="field-value" id="receiptNoField">___</span></div>
+      <div class="field-label date">Date: <span class="field-value" id="dateField">__/__/____</span></div>
+      <div class="field-label name">Name: <span class="field-value" id="nameField">__________</span></div>
+      <div class="field-label amount">Amount: ₹<span class="field-value" id="amountField">____</span></div>
+      <div class="field-label receiver">Receiver: <span class="field-value" id="receiverField">__________</span></div>
+      <div class="field-label status">Status: <span class="field-value" id="statusField">__________</span></div>
+    </div>
+
+    <div class="card">
+      <h2>Follow Us</h2>
+      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr" target="_blank">Instagram</a></p>
+    </div>
+  </section>
+
+  <footer>&copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.</footer>
+
+  <script>
+    // 🔗 Replace with your current Web App /exec URL
+    const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbxGNlpHyKlr5gnbdY1USS2I38XuycltDLTXvuFLkZHS_zq_0jo0w5T44LMWSkaqi7OxDw/exec";
+
+    function toggleMenu(){ document.getElementById('navLinks').classList.toggle('active'); }
+
+    function checkReceipt(){
+      const receipt = document.getElementById("receiptInput").value.trim();
+      const errorMsg = document.getElementById("errorMsg");
+      const container = document.getElementById("receiptContainer");
+      errorMsg.textContent = "";
+      container.style.display = "none";
+
+      if (!receipt){
+        errorMsg.textContent = "Please enter a receipt number.";
+        return;
+      }
+
+      errorMsg.textContent = "Loading...";
+
+      const url = `${WEBAPP_URL}?receipt=${encodeURIComponent(receipt)}&t=${Date.now()}`;
+      fetch(url)
+        .then(r => r.json())
+        .then(data => {
+          if (data?.error){
+            errorMsg.textContent = "❌ " + data.error;
+            return;
+          }
+          if (!Array.isArray(data) || data.length === 0){
+            errorMsg.textContent = "❌ No matching records found.";
+            return;
+          }
+
+          // Prefer exact match; fall back to first
+          const norm = s => String(s ?? "").replace(/\s+/g,"").replace(/^0+/,"").toLowerCase();
+          const exact = data.find(d => norm(d.ReceiptNumber) === norm(receipt));
+          const entry = exact || data[0];
+
+          // Update fields
+          document.getElementById("receiptNoField").innerText = entry.ReceiptNumber ?? "___";
+          document.getElementById("dateField").innerText      = entry.Date || "__/__/____";
+          document.getElementById("nameField").innerText      = entry.Name || "__________";
+          document.getElementById("amountField").innerText    = (entry.Amount ?? "").toString();
+          document.getElementById("receiverField").innerText  = entry.Receiver || "__________";
+          document.getElementById("statusField").innerText    = entry.Status || "__________";
+
+          container.style.display = "inline-block";
+          errorMsg.textContent = "";
+        })
+        .catch(() => { errorMsg.textContent = "Error fetching data."; });
+    }
+  </script>
+</body>
 </html>
