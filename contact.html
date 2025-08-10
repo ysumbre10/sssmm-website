@@ -331,7 +331,7 @@
 
       errorMsg.innerHTML = "Loading...";
 
-      fetch("https://script.google.com/macros/s/AKfycbyqYOJ2ZstrADrf_LwgAbGqUOFKz_2ckT7l9rUxGm0XO083j0QXD0BHXv1e31wUOvC6Pw/exec?receipt=" + encodeURIComponent(receipt))
+      fetch("https://script.google.com/macros/s/AKfycbxGNlpHyKlr5gnbdY1USS2I38XuycltDLTXvuFLkZHS_zq_0jo0w5T44LMWSkaqi7OxDw/exec?receipt=" + encodeURIComponent(receipt))
         .then(response => response.json())
         .then(data => {
           if (data.error) {
