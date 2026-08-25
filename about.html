@@ -9,7 +9,7 @@
   <link rel="icon" href="images/swami_logo-removebg-preview.png">
   <link rel="stylesheet" href="assets/style.css">
   <script>
-    /* keep in sync with assets/lang-boot.js — inlined to avoid a language flash */
+    /* inlined, not a separate file, so it runs before first paint (no language flash) */
     (function () {
       var q = /[?&]lang=(en|mr)/.exec(location.search);
       var l = q && q[1];

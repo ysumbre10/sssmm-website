@@ -169,7 +169,6 @@ h2.title {
 }
 
 /* ornamental divider under headings */
-h2.title + .rule,
 .rule {
   width: 132px;
   height: 14px;
