@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Shree Swami Samarth Mitra Mandal, donate by UPI or bank transfer, and view your donation receipt online.">
+  <meta name="description" content="Contact Shree Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Pune, and view your donation receipt online.">
   <title>संपर्क व देणगी | Contact & Donate — Shree Swami Samarth Mitra Mandal</title>
-  <link rel="icon" href="images/swami_logo-removebg-preview.png">
+  <link rel="icon" href="images/logo.webp">
   <link rel="stylesheet" href="assets/style.css">
   <script>
     /* inlined, not a separate file, so it runs before first paint (no language flash) */
@@ -23,7 +23,7 @@
 <body>
 
   <header class="site-header">
-    <img src="images/swami_logo-removebg-preview.png" alt="" class="logo" width="96" height="96">
+    <img src="images/logo.webp" alt="" class="logo" width="96" height="96">
     <h1><span class="mr">श्री स्वामी समर्थ मित्र मंडळ</span><span class="en">Shree Swami Samarth Mitra Mandal</span></h1>
     <p class="meta">
       <span class="mr">नोंदणी क्र. महा.७४१/२००३/पुणे &nbsp;·&nbsp; स्थापना १३ जून २००३</span>
@@ -41,7 +41,7 @@
         <a href="about.html"><span class="mr">आमच्याबद्दल</span><span class="en">About Us</span></a>
         <a href="gallery.html"><span class="mr">गॅलरी</span><span class="en">Gallery</span></a>
         <a href="contact.html" aria-current="page"><span class="mr">संपर्क व देणगी</span><span class="en">Contact &amp; Donate</span></a>
-        <a href="internal.html"><span class="mr">कार्यकर्ता लॉगिन</span><span class="en">Karyakarta Login</span></a>
+        <a href="karyakarta.html"><span class="mr">कार्यकर्ता लॉगिन</span><span class="en">Karyakarta Login</span></a>
       </div>
       <button id="langToggle" type="button">English</button>
     </div>
@@ -66,24 +66,6 @@
         <p><strong><span class="mr">ईमेल:</span><span class="en">Email:</span></strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
       </div>
 
-      <div class="card">
-        <h3><span class="mr">मंडळाला सहकार्य करा</span><span class="en">Support Our Mandal</span></h3>
-        <p>
-          <span class="mr">आपल्या उदार देणगीमुळे आम्ही सांस्कृतिक, धार्मिक व समाजकल्याणाचे उपक्रम राबवू शकतो. आपल्या सहकार्यासाठी मनःपूर्वक आभार!</span>
-          <span class="en">Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you for supporting our mission!</span>
-        </p>
-        <p><strong><span class="mr">देणगीसाठी बँक तपशील:</span><span class="en">Bank Details for Donation:</span></strong></p>
-        <p>
-          <span class="mr">खातेदाराचे नाव</span><span class="en">Account Holder Name</span>: Mr Gaurav Anil Shete<br>
-          <span class="mr">खाते क्रमांक</span><span class="en">Account Number</span>: 157057705792<br>
-          IFSC: INDB0000829<br>
-          <span class="mr">बँक</span><span class="en">Bank Name</span>: IndusInd Bank<br>
-          <span class="mr">शाखा</span><span class="en">Branch</span>: Chakan, 0829, 410501
-        </p>
-        <p><strong>UPI ID:</strong> shreeswamisamarth@indie</p>
-        <p><strong><span class="mr">देणगीसाठी QR स्कॅन करा:</span><span class="en">Scan QR to Donate:</span></strong></p>
-        <img src="images/vargani_qr.jpeg" alt="Donation QR code" loading="lazy" style="max-width:260px;margin:0 auto;border-radius:12px">
-      </div>
 
       <div class="card center">
         <h3><span class="mr">आपली पावती पहा</span><span class="en">Check &amp; Show Your Receipt</span></h3>
@@ -100,14 +82,23 @@
         </form>
         <p class="msg" id="receiptMsg" role="status" aria-live="polite"></p>
 
-        <div class="receipt" id="receiptBox" hidden>
-          <img src="images/pavti.png" alt="" loading="lazy">
-          <div class="field f1"><span class="mr">पावती क्र.</span><span class="en">Receipt No.</span><span class="v" id="fReceipt"></span></div>
-          <div class="field f2"><span class="mr">दिनांक</span><span class="en">Date</span><span class="v" id="fDate"></span></div>
-          <div class="field f3"><span class="mr">नाव</span><span class="en">Name</span><span class="v" id="fName"></span></div>
-          <div class="field f4"><span class="mr">रक्कम</span><span class="en">Amount</span><span class="v" id="fAmount"></span></div>
-          <div class="field f5"><span class="mr">स्वीकर्ता</span><span class="en">Receiver</span><span class="v" id="fReceiver"></span></div>
-          <div class="field f6"><span class="mr">स्थिती</span><span class="en">Status</span><span class="v" id="fStatus"></span></div>
+        <div id="receiptBox" hidden>
+          <div class="entry">
+            <dl>
+              <dt><span class="mr">पावती क्रमांक</span><span class="en">Receipt Number</span></dt>
+              <dd id="fReceipt">—</dd>
+              <dt><span class="mr">दिनांक</span><span class="en">Date</span></dt>
+              <dd id="fDate">—</dd>
+              <dt><span class="mr">नाव</span><span class="en">Name</span></dt>
+              <dd id="fName">—</dd>
+              <dt><span class="mr">रक्कम</span><span class="en">Amount</span></dt>
+              <dd id="fAmount">—</dd>
+              <dt><span class="mr">स्वीकर्ता</span><span class="en">Receiver</span></dt>
+              <dd id="fReceiver">—</dd>
+              <dt><span class="mr">स्थिती</span><span class="en">Status</span></dt>
+              <dd id="fStatus">—</dd>
+            </dl>
+          </div>
         </div>
       </div>
     </div>

@@ -378,11 +378,6 @@ input:focus-visible, button:focus-visible, a:focus-visible, summary:focus-visibl
 .entry .status-pending { color: #b3261e; }
 .entry .status-paid { color: #1c6b3c; }
 
-/* ---------- receipt ---------- */
-.receipt { position: relative; display: inline-block; max-width: 560px; width: 100%; }
-.receipt img { width: 100%; }
-.receipt .field { position: absolute; font-weight: 700; color: #12224a; font-size: clamp(.6rem, 1.9vw, .95rem); }
-
 /* ---------- gallery ---------- */
 .videos { display: grid; gap: 18px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); }
 
@@ -433,22 +428,3 @@ input:focus-visible, button:focus-visible, a:focus-visible, summary:focus-visibl
   .reveal { opacity: 1; transform: none; transition: none; }
   .btn:hover { transform: none; }
 }
-
-/* ---------- receipt overlay ----------
-   Percentages, not pixels, so the text tracks the pavti image at any width.
-   ponytail: these offsets are calibrated by eye against images/pavti.png —
-   if the receipt image is ever redrawn, retune --rcp-* here and nowhere else. */
-.receipt {
-  --rcp-left: 37%;
-  --rcp-top: 55%;
-  --rcp-step: 7%;
-}
-
-.receipt .field { left: var(--rcp-left); white-space: nowrap; }
-.receipt .f1 { top: var(--rcp-top); }
-.receipt .f2 { top: calc(var(--rcp-top) + var(--rcp-step)); }
-.receipt .f3 { top: calc(var(--rcp-top) + 2 * var(--rcp-step)); }
-.receipt .f4 { top: calc(var(--rcp-top) + 3 * var(--rcp-step)); }
-.receipt .f5 { top: calc(var(--rcp-top) + 4 * var(--rcp-step)); }
-.receipt .f6 { top: calc(var(--rcp-top) + 5 * var(--rcp-step)); }
-.receipt .field .v { font-weight: 400; margin-left: 4px; }
