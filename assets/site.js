@@ -7,7 +7,7 @@
   var UTSAV = new Date('2026-09-14T00:00:00+05:30').getTime();
 
   // Apps Script web app backing the donation lookups. Source: donation-api.gs
-  window.WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbymKcKWB-KAnyWupv_jGfMaz-aMt7ACx1qFMN7XtHkbocqHwj0KLzTosO6GslBC2u09/exec';
+  window.WEBAPP_URL = 'https://script.google.com/macros/s/AKfycbz8hnBHNzsq1togiHzTwRB721UYpMkgXZFigHrlDQJFXQ5vCL1qnR87vaUe8GyssE8C/exec';
 
   /* ---------- language ---------- */
   // The <html lang> attribute is the single switch; style.css hides the other
