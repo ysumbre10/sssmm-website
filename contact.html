@@ -1,171 +1,172 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
+
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact & Donate - Shree Swami Samarth Mitra Mandal</title>
-  <style>
-    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f9f3e9; margin:0; color:#333; }
-    header { background:#ff9933; color:#fff; padding:10px; text-align:center; }
-    .logo { width:120px; display:block; margin:0 auto 10px; }
-    nav { background:#cc7a00; padding:12px; text-align:center; position:relative; }
-    .nav-links { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; }
-    nav a { color:#fff; padding:8px 12px; text-decoration:none; font-weight:bold; transition:color .3s, transform .3s; border-radius:5px; }
-    nav a:hover { color:#ffd699; background-color:rgba(255,255,255,.1); transform:scale(1.1); }
-    .menu-toggle { display:none; font-size:26px; cursor:pointer; color:#fff; padding:8px 12px; text-align:center; margin:0 auto; }
-    section { max-width:900px; margin:auto; padding:20px; }
-    .card { background:#fff; padding:20px; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,.1); margin:20px auto; }
-    .qr-image { width:100%; max-width:400px; display:block; margin:10px auto; }
-    #receiptInput { width:90%; padding:10px; margin:10px 0; border-radius:5px; border:1px solid #ccc; }
-    button { padding:10px 20px; background:#cc7a00; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px; }
-    button:hover { background:#ff9933; }
-    .receipt-container { position:relative; display:inline-block; width:100%; max-width:800px; margin-top:30px; }
-    .receipt-bg { width:100%; display:block; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,.3); }
-    .field-label { position:absolute; color:#000; font-weight:bold; font-size:18px; white-space:nowrap; }
-    .field-value { font-weight:normal; margin-left:5px; }
-    /* Desktop overlay positions - adjust as per your image */
-    .receipt-no { top:310px; left:320px; }
-    .date       { top:340px; left:320px; }
-    .name       { top:370px; left:320px; }
-    .amount     { top:400px; left:320px; }
-    .receiver   { top:430px; left:320px; }
-    .status     { top:460px; left:320px; }
-    footer { background:#ff9933; color:#fff; text-align:center; padding:15px; margin-top:20px; }
-    #errorMsg { color:red; margin-top:10px; }
-    @media (max-width:768px){
-      .nav-links{display:none; flex-direction:column;}
-      .nav-links.active{display:flex;}
-      .menu-toggle{display:block;}
-      .field-label{font-size:14px;}
-      .receipt-no{ top:55%; left:37%; }
-      .date     { top:62%; left:37%; }
-      .name     { top:69%; left:37%; }
-      .amount   { top:76%; left:37%; }
-      .receiver { top:83%; left:37%; }
-      .status   { top:90%; left:37%; }
-    }
-  </style>
+  <meta name="description" content="Contact Shree Swami Samarth Mitra Mandal, donate by UPI or bank transfer, and view your donation receipt online.">
+  <title>संपर्क व देणगी | Contact & Donate — Shree Swami Samarth Mitra Mandal</title>
+  <link rel="icon" href="images/swami_logo-removebg-preview.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    /* keep in sync with assets/lang-boot.js — inlined to avoid a language flash */
+    (function () {
+      var q = /[?&]lang=(en|mr)/.exec(location.search);
+      var l = q && q[1];
+      if (!l) { try { l = localStorage.getItem('sssmm-lang'); } catch (e) {} }
+      document.documentElement.lang = (l === 'en') ? 'en' : 'mr';
+    })();
+  </script>
+  <script src="assets/site.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <img src="images/swami_logo-removebg-preview.png" alt="Mandal Logo" class="logo">
-    <h1>Contact & Donate</h1>
+
+  <header class="site-header">
+    <img src="images/swami_logo-removebg-preview.png" alt="" class="logo" width="96" height="96">
+    <h1><span class="mr">श्री स्वामी समर्थ मित्र मंडळ</span><span class="en">Shree Swami Samarth Mitra Mandal</span></h1>
+    <p class="meta">
+      <span class="mr">नोंदणी क्र. महा.७४१/२००३/पुणे &nbsp;·&nbsp; स्थापना १३ जून २००३</span>
+      <span class="en">Reg. No. Maha.741/2003/Pune &nbsp;·&nbsp; Established 13 June 2003</span>
+    </p>
   </header>
 
-  <nav>
-    <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
-    <div class="nav-links" id="navLinks">
-      <a href="index-english.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact & Donate</a>
-      <a href="internal.html">Karyakarta Login</a>
-      <a href="index.html" style="float:right;">मराठी</a>
+  <nav class="site-nav">
+    <div class="wrap">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="mr">☰ मेन्यू</span><span class="en">☰ Menu</span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html"><span class="mr">मुख्यपृष्ठ</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="mr">आमच्याबद्दल</span><span class="en">About Us</span></a>
+        <a href="gallery.html"><span class="mr">गॅलरी</span><span class="en">Gallery</span></a>
+        <a href="contact.html" aria-current="page"><span class="mr">संपर्क व देणगी</span><span class="en">Contact &amp; Donate</span></a>
+        <a href="internal.html"><span class="mr">कार्यकर्ता लॉगिन</span><span class="en">Karyakarta Login</span></a>
+      </div>
+      <button id="langToggle" type="button">English</button>
     </div>
   </nav>
 
-  <section>
-    <div class="card">
-      <h2>Contact Us</h2>
-      <p><strong>Address:</strong> <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank">Shree Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Taluka Khed, District Pune, 410501</a>.</p>
-      <p><strong>Mobile:</strong> <a href="tel:7057705792">7057705792</a></p>
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank">Chat on WhatsApp</a></p>
-      <p><strong>Email:</strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
-    </div>
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">संपर्क व देणगी</span><span class="en">Contact &amp; Donate</span></h2>
+      <div class="rule"></div>
 
-    <div class="card">
-      <h2>Support Our Mandal</h2>
-      <p>Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you for supporting our mission!</p>
-      <p><strong>Bank Details for Donation:</strong></p>
-      <p>
-        Account Holder Name: Mr Gaurav Anil Shete<br>
-        Account Number: 157057705792<br>
-        IFSC Code: INDB0000829<br>
-        Bank Name: IndusInd Bank<br>
-        Branch: Chakan, 0829, 410501
-      </p>
-      <p><strong>UPI ID:</strong> shreeswamisamarth@indie</p>
-      <p><strong>Scan QR to Donate:</strong></p>
-      <img src="images/vargani_qr.jpeg" alt="Donation QR Code" class="qr-image">
-    </div>
+      <div class="card">
+        <h3><span class="mr">आमच्याशी संपर्क साधा</span><span class="en">Contact Us</span></h3>
+        <p>
+          <strong><span class="mr">पत्ता:</span><span class="en">Address:</span></strong>
+          <a href="https://maps.app.goo.gl/KtyrqmtvuqCUxpSU6?g_st=ic" target="_blank" rel="noopener">
+            <span class="mr">श्री स्वामी समर्थ मित्र मंडळ, सुम्ब्रेनगर, वाकी खुर्द, तालुका खेड, जिल्हा पुणे, ४१०५०१</span>
+            <span class="en">Shree Swami Samarth Mitra Mandal, Sumbrenagar, Waki Khurd, Taluka Khed, District Pune, 410501</span>
+          </a>
+        </p>
+        <p><strong><span class="mr">मोबाईल:</span><span class="en">Mobile:</span></strong> <a href="tel:7057705792">7057705792</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/917057705792" target="_blank" rel="noopener"><span class="mr">व्हॉट्सअ‍ॅपवर संपर्क करा</span><span class="en">Chat on WhatsApp</span></a></p>
+        <p><strong><span class="mr">ईमेल:</span><span class="en">Email:</span></strong> <a href="mailto:shreeswamisamarthmandal.2003@gmail.com">shreeswamisamarthmandal.2003@gmail.com</a></p>
+      </div>
 
-    <div class="card">
-      <h2>Check & Show Your Receipt</h2>
-      <input type="text" id="receiptInput" placeholder="Enter Receipt Number">
-      <br>
-      <button onclick="checkReceipt()">Fetch & Show</button>
-      <div id="errorMsg"></div>
-    </div>
+      <div class="card">
+        <h3><span class="mr">मंडळाला सहकार्य करा</span><span class="en">Support Our Mandal</span></h3>
+        <p>
+          <span class="mr">आपल्या उदार देणगीमुळे आम्ही सांस्कृतिक, धार्मिक व समाजकल्याणाचे उपक्रम राबवू शकतो. आपल्या सहकार्यासाठी मनःपूर्वक आभार!</span>
+          <span class="en">Your generous contributions help us organize cultural, devotional, and community welfare activities. Thank you for supporting our mission!</span>
+        </p>
+        <p><strong><span class="mr">देणगीसाठी बँक तपशील:</span><span class="en">Bank Details for Donation:</span></strong></p>
+        <p>
+          <span class="mr">खातेदाराचे नाव</span><span class="en">Account Holder Name</span>: Mr Gaurav Anil Shete<br>
+          <span class="mr">खाते क्रमांक</span><span class="en">Account Number</span>: 157057705792<br>
+          IFSC: INDB0000829<br>
+          <span class="mr">बँक</span><span class="en">Bank Name</span>: IndusInd Bank<br>
+          <span class="mr">शाखा</span><span class="en">Branch</span>: Chakan, 0829, 410501
+        </p>
+        <p><strong>UPI ID:</strong> shreeswamisamarth@indie</p>
+        <p><strong><span class="mr">देणगीसाठी QR स्कॅन करा:</span><span class="en">Scan QR to Donate:</span></strong></p>
+        <img src="images/vargani_qr.jpeg" alt="Donation QR code" loading="lazy" style="max-width:260px;margin:0 auto;border-radius:12px">
+      </div>
 
-    <div class="receipt-container" id="receiptContainer" style="display:none;">
-      <img src="images/pavti.png" alt="Receipt" class="receipt-bg">
-      <div class="field-label receipt-no">Receipt No: <span class="field-value" id="receiptNoField">___</span></div>
-      <div class="field-label date">Date: <span class="field-value" id="dateField">__/__/____</span></div>
-      <div class="field-label name">Name: <span class="field-value" id="nameField">__________</span></div>
-      <div class="field-label amount">Amount: ₹<span class="field-value" id="amountField">____</span></div>
-      <div class="field-label receiver">Receiver: <span class="field-value" id="receiverField">__________</span></div>
-      <div class="field-label status">Status: <span class="field-value" id="statusField">__________</span></div>
-    </div>
+      <div class="card center">
+        <h3><span class="mr">आपली पावती पहा</span><span class="en">Check &amp; Show Your Receipt</span></h3>
+        <p class="muted">
+          <span class="mr">आपल्या पावतीवरील क्रमांक टाकून आपली देणगी पावती पहा.</span>
+          <span class="en">Enter the number printed on your receipt to view it.</span>
+        </p>
+        <form id="receiptForm" autocomplete="off">
+          <input type="text" id="receiptInput" inputmode="numeric"
+                 aria-label="Receipt number" placeholder="🔎 पावती क्रमांक / Receipt Number">
+          <button class="btn" type="submit">
+            <span class="mr">पावती पहा</span><span class="en">Fetch &amp; Show</span>
+          </button>
+        </form>
+        <p class="msg" id="receiptMsg" role="status" aria-live="polite"></p>
 
-    <div class="card">
-      <h2>Follow Us</h2>
-      <p><a href="https://www.instagram.com/shreeswamisamarthmandal?igsh=NmxpbXZiNTJ1Y2ky&utm_source=qr" target="_blank">Instagram</a></p>
+        <div class="receipt" id="receiptBox" hidden>
+          <img src="images/pavti.png" alt="" loading="lazy">
+          <div class="field f1"><span class="mr">पावती क्र.</span><span class="en">Receipt No.</span><span class="v" id="fReceipt"></span></div>
+          <div class="field f2"><span class="mr">दिनांक</span><span class="en">Date</span><span class="v" id="fDate"></span></div>
+          <div class="field f3"><span class="mr">नाव</span><span class="en">Name</span><span class="v" id="fName"></span></div>
+          <div class="field f4"><span class="mr">रक्कम</span><span class="en">Amount</span><span class="v" id="fAmount"></span></div>
+          <div class="field f5"><span class="mr">स्वीकर्ता</span><span class="en">Receiver</span><span class="v" id="fReceiver"></span></div>
+          <div class="field f6"><span class="mr">स्थिती</span><span class="en">Status</span><span class="v" id="fStatus"></span></div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>&copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.</footer>
-
   <script>
-    // 🔗 Replace with your current Web App /exec URL
-    const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbymKcKWB-KAnyWupv_jGfMaz-aMt7ACx1qFMN7XtHkbocqHwj0KLzTosO6GslBC2u09/exec";
+    (function () {
+      var form = document.getElementById('receiptForm');
+      var input = document.getElementById('receiptInput');
+      var msg = document.getElementById('receiptMsg');
+      var box = document.getElementById('receiptBox');
+      var btn = form.querySelector('button');
 
-    function toggleMenu(){ document.getElementById('navLinks').classList.toggle('active'); }
+      var t = function (mr, en) { return document.documentElement.lang === 'mr' ? mr : en; };
+      var norm = function (v) { return String(v == null ? '' : v).replace(/\s+/g, '').replace(/^0+/, '').toLowerCase(); };
 
-    function checkReceipt(){
-      const receipt = document.getElementById("receiptInput").value.trim();
-      const errorMsg = document.getElementById("errorMsg");
-      const container = document.getElementById("receiptContainer");
-      errorMsg.textContent = "";
-      container.style.display = "none";
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var receipt = input.value.trim();
+        box.hidden = true;
+        msg.className = 'msg';
 
-      if (!receipt){
-        errorMsg.textContent = "Please enter a receipt number.";
-        return;
-      }
+        if (!receipt) {
+          msg.className = 'msg err';
+          msg.textContent = t('कृपया पावती क्रमांक टाका.', 'Please enter a receipt number.');
+          return;
+        }
 
-      errorMsg.textContent = "Loading...";
+        msg.textContent = t('शोधत आहे…', 'Loading…');
+        btn.disabled = true;
 
-      const url = `${WEBAPP_URL}?receipt=${encodeURIComponent(receipt)}&t=${Date.now()}`;
-      fetch(url)
-        .then(r => r.json())
-        .then(data => {
-          if (data?.error){
-            errorMsg.textContent = "❌ " + data.error;
-            return;
-          }
-          if (!Array.isArray(data) || data.length === 0){
-            errorMsg.textContent = "❌ No matching records found.";
-            return;
-          }
-
-          // Prefer exact match; fall back to first
-          const norm = s => String(s ?? "").replace(/\s+/g,"").replace(/^0+/,"").toLowerCase();
-          const exact = data.find(d => norm(d.ReceiptNumber) === norm(receipt));
-          const entry = exact || data[0];
-
-          // Update fields
-          document.getElementById("receiptNoField").innerText = entry.ReceiptNumber ?? "___";
-          document.getElementById("dateField").innerText      = entry.Date || "__/__/____";
-          document.getElementById("nameField").innerText      = entry.Name || "__________";
-          document.getElementById("amountField").innerText    = (entry.Amount ?? "").toString();
-          document.getElementById("receiverField").innerText  = entry.Receiver || "__________";
-          document.getElementById("statusField").innerText    = entry.Status || "__________";
-
-          container.style.display = "inline-block";
-          errorMsg.textContent = "";
-        })
-        .catch(() => { errorMsg.textContent = "Error fetching data."; });
-    }
+        window.apiGet({ receipt: receipt })
+          .then(function (data) {
+            if (!Array.isArray(data) || !data.length) throw new Error(t('पावती सापडली नाही.', 'No matching receipt found.'));
+            // Prefer an exact match; the endpoint may return a near match.
+            var entry = data.filter(function (d) { return norm(d.ReceiptNumber) === norm(receipt); })[0] || data[0];
+            document.getElementById('fReceipt').textContent = entry.ReceiptNumber || '—';
+            document.getElementById('fDate').textContent = entry.Date || '—';
+            document.getElementById('fName').textContent = entry.Name || '—';
+            document.getElementById('fAmount').textContent = entry.Amount ? '₹' + entry.Amount : '—';
+            document.getElementById('fReceiver').textContent = entry.Receiver || '—';
+            document.getElementById('fStatus').textContent = entry.Status || '—';
+            box.hidden = false;
+            msg.textContent = '';
+          })
+          .catch(function (err) {
+            msg.className = 'msg err';
+            msg.textContent = '❌ ' + err.message;
+          })
+          .then(function () { btn.disabled = false; });
+      });
+    })();
   </script>
+
+  <footer class="site-footer">
+    <span class="mr">© २००३ – २०२६ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.</span>
+    <span class="en">© 2003 – 2026 Shree Swami Samarth Mitra Mandal. All Rights Reserved.</span>
+  </footer>
+
 </body>
+
 </html>

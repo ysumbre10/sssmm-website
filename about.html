@@ -1,387 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Shree Swami Samarth Mitra Mandal</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f9f3e9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #ff9933;
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 120px;
-      display: block;
-      margin: 0 auto 10px;
-    }
-
-    nav {
-      background: #cc7a00;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    nav a {
-      color: white;
-      padding: 8px 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, transform 0.3s;
-      border-radius: 5px;
-    }
-
-    nav a:hover {
-      color: #ffd699;
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: scale(1.1);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-      color: white;
-      padding: 8px 12px;
-    }
-
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      text-align: justify;
-    }
-
-    h2 {
-      color: #cc7a00;
-      border-bottom: 3px solid #ff9933;
-      padding-bottom: 10px;
-      margin-top: 20px;
-    }
-
-    footer {
-      background: #ff9933;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-
-    .accordion {
-      background-color: #fff;
-      color: #333;
-      cursor: pointer;
-      padding: 15px;
-      width: 100%;
-      text-align: left;
-      border: none;
-      outline: none;
-      transition: background-color 0.3s, transform 0.3s;
-      border-radius: 5px;
-      margin-top: 10px;
-      font-size: 18px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .accordion:hover {
-      background-color: #ffecd9;
-      transform: scale(1.02);
-    }
-
-    .panel {
-      padding: 0 15px;
-      display: none;
-      background-color: #fff;
-      overflow: hidden;
-      border-radius: 0 0 5px 5px;
-      margin-bottom: 10px;
-    }
-
-    .booklet-link {
-      background: linear-gradient(135deg, #ff99cc, #ffccff);
-      border: 2px solid #ff66cc;
-      padding: 20px;
-      text-align: center;
-      border-radius: 10px;
-      margin-top: 30px;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .booklet-link a {
-      text-decoration: none;
-      color: #cc007a;
-      font-weight: bold;
-      font-size: 20px;
-      transition: color 0.3s;
-    }
-
-    .booklet-link a:hover {
-      color: #ff3399;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Our journey since 2003, registered executive committee, the 2026-2027 committee, our purpose and the festivals we celebrate.">
+  <title>आमच्याबद्दल | About Us — Shree Swami Samarth Mitra Mandal</title>
+  <link rel="icon" href="images/swami_logo-removebg-preview.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    /* keep in sync with assets/lang-boot.js — inlined to avoid a language flash */
+    (function () {
+      var q = /[?&]lang=(en|mr)/.exec(location.search);
+      var l = q && q[1];
+      if (!l) { try { l = localStorage.getItem('sssmm-lang'); } catch (e) {} }
+      document.documentElement.lang = (l === 'en') ? 'en' : 'mr';
+    })();
+  </script>
+  <script src="assets/site.js" defer></script>
 </head>
 
 <body>
 
-  <header>
-    <img src="images/swami_logo-removebg-preview.png" alt="Mandal Logo" class="logo">
-    <h1>About Us</h1>
+  <header class="site-header">
+    <img src="images/swami_logo-removebg-preview.png" alt="" class="logo" width="96" height="96">
+    <h1><span class="mr">श्री स्वामी समर्थ मित्र मंडळ</span><span class="en">Shree Swami Samarth Mitra Mandal</span></h1>
+    <p class="meta">
+      <span class="mr">नोंदणी क्र. महा.७४१/२००३/पुणे &nbsp;·&nbsp; स्थापना १३ जून २००३</span>
+      <span class="en">Reg. No. Maha.741/2003/Pune &nbsp;·&nbsp; Established 13 June 2003</span>
+    </p>
   </header>
 
-  <nav>
-    <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
-    <div class="nav-links" id="navLinks">
-      <a href="index-english.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact & Donate</a>
-      <a href="internal.html">Karyakarta Login</a>
-      <a href="index.html" style="float:right;">मराठी</a>
+  <nav class="site-nav">
+    <div class="wrap">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="mr">☰ मेन्यू</span><span class="en">☰ Menu</span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html"><span class="mr">मुख्यपृष्ठ</span><span class="en">Home</span></a>
+        <a href="about.html" aria-current="page"><span class="mr">आमच्याबद्दल</span><span class="en">About Us</span></a>
+        <a href="gallery.html"><span class="mr">गॅलरी</span><span class="en">Gallery</span></a>
+        <a href="contact.html"><span class="mr">संपर्क व देणगी</span><span class="en">Contact &amp; Donate</span></a>
+        <a href="internal.html"><span class="mr">कार्यकर्ता लॉगिन</span><span class="en">Karyakarta Login</span></a>
+      </div>
+      <button id="langToggle" type="button">English</button>
     </div>
   </nav>
 
-  <section>
-    <h2>Our Journey</h2>
-    <p>
-      Shree Swami Samarth Mitra Mandal was founded on 13 June 2003 by Late Rajendra Shamrao Sumbre with a visionary
-      mission to bring the entire community of Sumbrenagar, Waki Khurd together through devotion, unity, and service. He
-      registered the organization with Registration No. Maha.741/2003/Pune to officially establish this spirit of
-      togetherness and cultural values. With unwavering dedication, he envisioned that this Mandal would grow into a
-      strong pillar of community bonding and cultural pride in the future. Starting with a small group of devoted
-      members, the Mandal has now expanded into a large family committed to preserving and spreading spiritual and
-      cultural heritage, fulfilling his dream and laying a strong foundation for generations to come.
-    </p>
-
-    <h2 style="text-align:center; margin-top: 40px;">Registered Executive Committee</h2>
-    <p style="text-align:center;">Our officially registered committee members</p>
-
-    <div style="overflow-x:auto;">
-      <table
-        style="width:100%; border-collapse: collapse; margin: 20px auto; max-width: 700px; background-color: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.1); border-radius: 10px;">
-        <thead style="background: #ff9933; color: white;">
-          <tr style="text-align: center;">
-            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Post</th>
-            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Name</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="text-align: center;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Founder</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Late Rajendra Shamrao Sumbre</td>
-          </tr>
-          <tr style="text-align: center; background-color: #f9f3e9;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">President</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Mr. Rajendra Jayram Totre</td>
-          </tr>
-          <tr style="text-align: center;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Vice President</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Mr. Shamsing Dattusing Sisodiya</td>
-          </tr>
-          <tr style="text-align: center; background-color: #f9f3e9;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Secretary</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Mr. Prakash Budhaji Gurav</td>
-          </tr>
-          <tr style="text-align: center;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Treasurer</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Mr. Sanjay Damodar Sumbre</td>
-          </tr>
-          <tr style="text-align: center; background-color: #f9f3e9;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Joint Secretary</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Mr. Dattoba Baburao Bhanvase</td>
-          </tr>
-          <tr style="text-align: center;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Member</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Mr. Dinesh Onkarnath Sharma</td>
-          </tr>
-          <tr style="text-align: center; background-color: #f9f3e9;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Member</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Mr. Chitanand Madapati</td>
-          </tr>
-          <tr style="text-align: center;">
-            <td style="padding: 10px;">Member</td>
-            <td style="padding: 10px;">Mr. Arun Anandrao Thakre</td>
-          </tr>
-        </tbody>
-      </table>
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">आमचा प्रवास</span><span class="en">Our Journey</span></h2>
+      <div class="rule"></div>
+      <div class="card prose">
+        <div class="mr">
+          <p>श्री स्वामी समर्थ मित्र मंडळाची स्थापना १३ जून २००३ रोजी स्व. राजेंद्र शामराव सुंबरे यांच्या दुरदृष्टीने झाली. या मंडळाचा उद्देश सुम्ब्रेनगर, वाकी खुर्द येथील संपूर्ण समाज एकत्र आणणे, भक्ती, एकता आणि सेवेमुळे जोडणे असा होता. Maha.741/2003/Pune या क्रमांकाने नोंदणी करून त्यांनी एकतेचे आणि सांस्कृतिक मूल्यांचे बीज पेरले. एका लहान समूहातून सुरू झालेले हे मंडळ आज एक मोठे कुटुंब बनले आहे, जे अध्यात्मिक आणि सांस्कृतिक वारसा जपण्यासाठी आणि पसरवण्यासाठी कटिबद्ध आहे.</p>
+        </div>
+        <div class="en">
+          <p>Shree Swami Samarth Mitra Mandal was founded on 13 June 2003 by Late Rajendra Shamrao Sumbre with a visionary mission to bring the entire community of Sumbrenagar, Waki Khurd together through devotion, unity, and service. He registered the organization with Registration No. Maha.741/2003/Pune to officially establish this spirit of togetherness and cultural values. With unwavering dedication, he envisioned that this Mandal would grow into a strong pillar of community bonding and cultural pride in the future. Starting with a small group of devoted members, the Mandal has now expanded into a large family committed to preserving and spreading spiritual and cultural heritage, fulfilling his dream and laying a strong foundation for generations to come.</p>
+        </div>
+      </div>
     </div>
-
-    <h2>Our Purpose</h2>
-    <p>
-      The main purpose of our Mandal is to celebrate Ganesh Utsav with grandeur and deep devotion, while also actively
-      engaging in various charitable and social welfare activities throughout the year. Alongside Ganesh Utsav, we also
-      proudly celebrate Navratri Utsav, Shivjanm Utsav, and Dahi Handi, all of which bring the community together in a
-      spirit of joy, unity, and cultural pride. Inspired by the vision of Chhatrapati Shivaji Maharaj — a devoted
-      follower of Lord Ganesha and Jagdamba — who dreamed of seeing this land flourish as a stronghold of saffron, Hindu
-      faith, and righteous values, our Mandal strives to instill these ideals in the younger generation. We aim to
-      nurture a deep sense of devotion, unity, and service among the youth so that they carry forward the legacy of
-      protecting and uplifting our traditions for generations to come.
-    </p>
-
-    <h2>Our Members</h2>
-    <p>
-      Our Karyakartas are the true pillars and heartbeat of our Mandal. Without their tireless efforts, unwavering
-      dedication, and selfless service, the Mandal would not be what it is today. Whether in moments of joy or times of
-      sorrow, they stand together like a united family, supporting each other and the entire community. These devoted
-      members work hand in hand, meticulously planning and executing every program to perfection — from intricate
-      decorations and heartfelt rituals to inspiring cultural events and impactful social activities. Their passion and
-      commitment transform every celebration into a soulful experience and keep the spirit of unity and devotion alive
-      throughout the year. They embody the very essence of "seva" (selfless service), and through their love and hard
-      work, they continue to uphold and strengthen the legacy of our Mandal.
-    </p>
-
-    <h2>Festivals We Celebrate</h2>
-
-    <button class="accordion">Ganesh Utsav</button>
-    <div class="panel">
-      <p>Ganesh Utsav is the heart and soul of our Mandal, celebrated with unmatched devotion and enthusiasm.
-        Beautifully crafted idols, mesmerizing decorations, vibrant aartis, and cultural programs unite the entire
-        community to welcome and honor Lord Ganesha as the remover of obstacles and the harbinger of joy.</p>
-    </div>
-
-    <button class="accordion">Navratri Utsav</button>
-    <div class="panel">
-      <p>During Navratri, we celebrate the divine feminine energy with devotion and vibrant festivities. The Mandal
-        organizes Garba nights, daily poojas, and cultural programs that bring the community together in dance, music,
-        and spiritual bliss, fostering unity and devotion among all age groups.</p>
-    </div>
-
-    <button class="accordion">Shivjanm Utsav</button>
-    <div class="panel">
-      <p>Shivjanm Utsav commemorates the birth of the great warrior king Chhatrapati Shivaji Maharaj. We honor his
-        courage, vision, and devotion through inspiring speeches, cultural performances, and community activities that
-        remind us of our rich heritage and valorous past.</p>
-    </div>
-
-    <button class="accordion">Gokulashtami</button>
-    <div class="panel">
-      <p>Gokulashtami, also known as Dahi Handi, celebrates Lord Krishna’s playful and divine spirit. Our Mandal
-        organizes the traditional human pyramid competitions and joyous festivities, spreading cheer and reinforcing the
-        values of teamwork, courage, and devotion.</p>
-    </div>
-
-    <button class="accordion">Holi</button>
-    <div class="panel">
-      <p>Holi, the festival of colors, is celebrated to promote joy, togetherness, and the triumph of good over evil.
-        Members come together to play colors, share sweets, and rejoice in an atmosphere of love and harmony,
-        strengthening bonds within the community.</p>
-    </div>
-
-    <div class="booklet-link">
-      <p>Download our Mandal’s detailed booklet for year 2023-24 :</p>
-      <a href="documents/Ahval-23-24.pdf" download>📄 Download 2023-24 Booklet</a>
-    </div>
-
-    <div class="booklet-link">
-      <p>2024-25 Booklet will be uploaded on 15 August 2025</p>
-      <!-- <a href="documents/Ahval-24-25.pdf" download>📄 Download Mandal Booklet</a> -->
-    </div>
-
-    <h2 style="text-align:center; margin-top: 40px;">Committee for 2025 - 2026</h2>
-    <p style="text-align:center;">This is the elected body for the year 2025 - 2026</p>
-
-    <div style="overflow-x:auto;">
-      <table
-        style="width:100%; border-collapse: collapse; margin: 20px auto; max-width: 700px; background-color: #fff; box-shadow: 0 6px 20px rgba(0,0,0,0.1); border-radius: 10px;">
-        <thead style="background: #ff9933; color: white;">
-          <tr style="text-align: center;">
-            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Post</th>
-            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Name</th>
-            <th style="padding: 12px; border-bottom: 2px solid #cc7a00;">Contact</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr style="text-align: center;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">President</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Hritik Vahile</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">9011457779</td>
-          </tr>
-          <tr style="text-align: center; background-color: #f9f3e9;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Vice President</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Shubham Sumbre</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">7558555771</td>
-          </tr>
-          <tr style="text-align: center;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Treasurer</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Yadnesh Sumbre</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">7040191010</td>
-          </tr>
-          <tr style="text-align: center; background-color: #f9f3e9;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Joint Treasurer</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Gaurav Shete</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">7397874647</td>
-          </tr>
-          <tr style="text-align: center;">
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Secretary</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">Sumit Shinde</td>
-            <td style="padding: 10px; border-bottom: 1px solid #eee;">7385950508</td>
-          </tr>
-          <tr style="text-align: center; background-color: #f9f3e9;">
-            <td style="padding: 10px;">Event Head</td>
-            <td style="padding: 10px;">Vicky Kelkar</td>
-            <td style="padding: 10px;">9922674322</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
   </section>
 
-  <footer>
-    &copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">नोंदणीकृत कार्यकारिणी</span><span class="en">Registered Executive Committee</span></h2>
+      <div class="rule"></div>
+      <p class="lede">
+        <span class="mr">आमच्या अधिकृत नोंदणीकृत कार्यकारिणी सदस्यांची यादी</span>
+        <span class="en">Our officially registered committee members</span>
+      </p>
+      <div class="table-scroll">
+        <table class="committee">
+          <thead>
+            <tr>
+              <th><span class="mr">पद</span><span class="en">Post</span></th>
+              <th><span class="mr">नाव</span><span class="en">Name</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="mr">संस्थापक</span><span class="en">Founder</span></td><td><span class="mr">कै. राजेंद्र शामराव सुंबरे</span><span class="en">Late Rajendra Shamrao Sumbre</span></td></tr>
+            <tr><td><span class="mr">अध्यक्ष</span><span class="en">President</span></td><td><span class="mr">श्री. राजेंद्र जयराम तोत्रे</span><span class="en">Mr. Rajendra Jayram Totre</span></td></tr>
+            <tr><td><span class="mr">उपाध्यक्ष</span><span class="en">Vice President</span></td><td><span class="mr">श्री. शामसिंग दत्तुसिंग सिसोदिया</span><span class="en">Mr. Shamsing Dattusing Sisodiya</span></td></tr>
+            <tr><td><span class="mr">सचिव</span><span class="en">Secretary</span></td><td><span class="mr">श्री. प्रकाश बुधाजी गुरव</span><span class="en">Mr. Prakash Budhaji Gurav</span></td></tr>
+            <tr><td><span class="mr">खजिनदार</span><span class="en">Treasurer</span></td><td><span class="mr">श्री. संजय दामोदर सुंबरे</span><span class="en">Mr. Sanjay Damodar Sumbre</span></td></tr>
+            <tr><td><span class="mr">सहसचिव</span><span class="en">Joint Secretary</span></td><td><span class="mr">श्री. दत्तोबा बाबुराव भानवसे</span><span class="en">Mr. Dattoba Baburao Bhanvase</span></td></tr>
+            <tr><td><span class="mr">सदस्य</span><span class="en">Member</span></td><td><span class="mr">श्री. दिनेश ओंकारनाथ शर्मा</span><span class="en">Mr. Dinesh Onkarnath Sharma</span></td></tr>
+            <tr><td><span class="mr">सदस्य</span><span class="en">Member</span></td><td><span class="mr">श्री. चितानंद मडपती</span><span class="en">Mr. Chitanand Madapati</span></td></tr>
+            <tr><td><span class="mr">सदस्य</span><span class="en">Member</span></td><td><span class="mr">श्री. अरुण आनंदराव ठाकरे</span><span class="en">Mr. Arun Anandrao Thakre</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">२०२६ – २०२७ कार्यकारी समिती</span><span class="en">Committee for 2026 – 2027</span></h2>
+      <div class="rule"></div>
+      <p class="lede">
+        <span class="mr">हे २०२६ – २०२७ या वर्षासाठी निवडलेले कार्यकारी मंडळ आहे</span>
+        <span class="en">This is the elected body for the year 2026 – 2027</span>
+      </p>
+      <div class="table-scroll">
+        <table class="committee">
+          <thead>
+            <tr>
+              <th><span class="mr">पद</span><span class="en">Post</span></th>
+              <th><span class="mr">नाव</span><span class="en">Name</span></th>
+              <th><span class="mr">संपर्क</span><span class="en">Contact</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><span class="mr">अध्यक्ष</span><span class="en">President</span></td><td><span class="mr">ऋतिक वहिले</span><span class="en">Hritik Vahile</span></td><td><a href="tel:9011457779">9011457779</a></td></tr>
+            <tr><td><span class="mr">उपाध्यक्ष</span><span class="en">Vice President</span></td><td><span class="mr">शुभम सुंबरे</span><span class="en">Shubham Sumbre</span></td><td><a href="tel:7558555771">7558555771</a></td></tr>
+            <tr><td><span class="mr">खजिनदार</span><span class="en">Treasurer</span></td><td><span class="mr">यज्ञेश सुंबरे</span><span class="en">Yadnesh Sumbre</span></td><td><a href="tel:7040191010">7040191010</a></td></tr>
+            <tr><td><span class="mr">सह-खजिनदार</span><span class="en">Joint Treasurer</span></td><td><span class="mr">गौरव शेटे</span><span class="en">Gaurav Shete</span></td><td><a href="tel:7397874647">7397874647</a></td></tr>
+            <tr><td><span class="mr">सचिव</span><span class="en">Secretary</span></td><td><span class="mr">चेतन गवडे</span><span class="en">Chetan Gawade</span></td><td><a href="tel:7249812844">7249812844</a></td></tr>
+            <tr><td><span class="mr">कार्याध्यक्ष</span><span class="en">Event Head</span></td><td><span class="mr">विकी केळकर</span><span class="en">Vicky Kelkar</span></td><td><a href="tel:9922674322">9922674322</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">आमचा उद्देश</span><span class="en">Our Purpose</span></h2>
+      <div class="rule"></div>
+      <div class="card prose">
+        <div class="mr">
+          <p>गणेशोत्सव मोठ्या उत्साहाने आणि भक्तिभावाने साजरा करणे हा आमच्या मंडळाचा मुख्य उद्देश आहे. याशिवाय वर्षभर अनेक समाजसेवा आणि सामाजिक उपक्रमात आम्ही सक्रिय सहभाग घेतो. गणेशोत्सवाबरोबरच नवरात्र उत्सव, शिवजयंती, दहीहंडी हे सणही आमच्या मंडळात मोठ्या उत्साहाने साजरे केले जातात. छत्रपती शिवाजी महाराजांनी आपली भूमी भगव्या रंगात फुलावी, हिंदू धर्माची आणि संस्कृतीची मूल्ये पुढील पिढीपर्यंत पोहोचावी असे स्वप्न पाहिले होते, आणि हीच मूल्ये युवकांमध्ये रुजवण्याचा आमचा प्रयत्न आहे.</p>
+        </div>
+        <div class="en">
+          <p>The main purpose of our Mandal is to celebrate Ganesh Utsav with grandeur and deep devotion, while also actively engaging in various charitable and social welfare activities throughout the year. Alongside Ganesh Utsav, we also proudly celebrate Navratri Utsav, Shivjanm Utsav, and Dahi Handi, all of which bring the community together in a spirit of joy, unity, and cultural pride. Inspired by the vision of Chhatrapati Shivaji Maharaj — a devoted follower of Lord Ganesha and Jagdamba — who dreamed of seeing this land flourish as a stronghold of saffron, Hindu faith, and righteous values, our Mandal strives to instill these ideals in the younger generation. We aim to nurture a deep sense of devotion, unity, and service among the youth so that they carry forward the legacy of protecting and uplifting our traditions for generations to come.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">आमचे कार्यकर्ते</span><span class="en">Our Members</span></h2>
+      <div class="rule"></div>
+      <div class="card prose">
+        <div class="mr">
+          <p>आमचे कार्यकर्ते म्हणजेच मंडळाचा खरा आधारस्तंभ. त्यांच्या अथक परिश्रमाशिवाय मंडळाची ओळखच शक्य नव्हती. आनंदाच्या किंवा दुःखाच्या काळातही, हे कार्यकर्ते एकत्र उभे राहतात आणि एक कुटुंबासारखे काम करतात. प्रत्येक कार्यक्रमाची आखणी, सजावट, धार्मिक विधी आणि सांस्कृतिक उपक्रमांमध्ये ते जिवापाड मेहनत घेतात. त्यांची सेवाभावना आणि निस्वार्थ समर्पण हे मंडळाच्या परंपरेला अधिक मजबूत करण्याचे कार्य करते.</p>
+        </div>
+        <div class="en">
+          <p>Our Karyakartas are the true pillars and heartbeat of our Mandal. Without their tireless efforts, unwavering dedication, and selfless service, the Mandal would not be what it is today. Whether in moments of joy or times of sorrow, they stand together like a united family, supporting each other and the entire community. These devoted members work hand in hand, meticulously planning and executing every program to perfection — from intricate decorations and heartfelt rituals to inspiring cultural events and impactful social activities. Their passion and commitment transform every celebration into a soulful experience and keep the spirit of unity and devotion alive throughout the year. They embody the very essence of "seva" (selfless service), and through their love and hard work, they continue to uphold and strengthen the legacy of our Mandal.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">आम्ही साजरे करत असलेले सण</span><span class="en">Festivals We Celebrate</span></h2>
+      <div class="rule"></div>
+
+      <details class="acc">
+        <summary><span class="mr">गणेशोत्सव</span><span class="en">Ganesh Utsav</span></summary>
+        <div>
+          <p class="mr">गणेशोत्सव हा आमच्या मंडळाचा आत्मा आहे. सुंदर मूर्ती, मनोहारी सजावट, भावपूर्ण आरती आणि सांस्कृतिक कार्यक्रम यामुळे संपूर्ण समाज एकत्र येतो आणि बाप्पांना आनंदाने व भक्तिभावाने वंदन करतो.</p>
+          <p class="en">Ganesh Utsav is the heart and soul of our Mandal, celebrated with unmatched devotion and enthusiasm. Beautifully crafted idols, mesmerizing decorations, vibrant aartis, and cultural programs unite the entire community to welcome and honor Lord Ganesha as the remover of obstacles and the harbinger of joy.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="mr">नवरात्र उत्सव</span><span class="en">Navratri Utsav</span></summary>
+        <div>
+          <p class="mr">नवरात्रमध्ये देवीच्या शक्तीची पूजा केली जाते. गरबा नाईट्स, रोजच्या पूजा व सांस्कृतिक कार्यक्रमांमुळे संपूर्ण समाज नृत्य, संगीत व भक्तिमय वातावरणात सहभागी होतो.</p>
+          <p class="en">During Navratri, we celebrate the divine feminine energy with devotion and vibrant festivities. The Mandal organizes Garba nights, daily poojas, and cultural programs that bring the community together in dance, music, and spiritual bliss, fostering unity and devotion among all age groups.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="mr">शिवजयंती</span><span class="en">Shivjanm Utsav</span></summary>
+        <div>
+          <p class="mr">शिवजयंती निमित्ताने छत्रपती शिवाजी महाराजांचा पराक्रम, त्यांची दूरदृष्टी आणि भक्ती यांची आठवण करून दिली जाते. प्रेरणादायी भाषणे, सांस्कृतिक कार्यक्रम आणि समाजहिताच्या उपक्रमांनी हा सण साजरा केला जातो.</p>
+          <p class="en">Shivjanm Utsav commemorates the birth of the great warrior king Chhatrapati Shivaji Maharaj. We honor his courage, vision, and devotion through inspiring speeches, cultural performances, and community activities that remind us of our rich heritage and valorous past.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="mr">गोकुळाष्टमी (दहीहंडी)</span><span class="en">Gokulashtami</span></summary>
+        <div>
+          <p class="mr">गोकुळाष्टमी, अर्थात दहीहंडी, श्रीकृष्णाच्या बाललीलांचा उत्सव आहे. मानवी मनोऱ्याच्या स्पर्धा, आनंदी वातावरण आणि टीमवर्कमुळे उत्सव रंगतो.</p>
+          <p class="en">Gokulashtami, also known as Dahi Handi, celebrates Lord Krishna’s playful and divine spirit. Our Mandal organizes the traditional human pyramid competitions and joyous festivities, spreading cheer and reinforcing the values of teamwork, courage, and devotion.</p>
+        </div>
+      </details>
+
+      <details class="acc">
+        <summary><span class="mr">होळी</span><span class="en">Holi</span></summary>
+        <div>
+          <p class="mr">होळी हा रंगांचा सण आहे. प्रेम, एकता आणि चांगल्याचा विजय याचे प्रतीक म्हणून साजरा केला जातो. सर्व सदस्य एकत्र येऊन रंग खेळतात, गोड पदार्थ शेअर करतात व एकमेकांशी प्रेमाचे बंध मजबूत करतात.</p>
+          <p class="en">Holi, the festival of colors, is celebrated to promote joy, togetherness, and the triumph of good over evil. Members come together to play colors, share sweets, and rejoice in an atmosphere of love and harmony, strengthening bonds within the community.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">मंडळाचा अहवाल</span><span class="en">Mandal Booklet</span></h2>
+      <div class="rule"></div>
+      <div class="card center">
+        <p>
+          <span class="mr">मंडळाचा सविस्तर अहवाल (बुकलेट) २०२३-२४ डाउनलोड करा:</span>
+          <span class="en">Download our Mandal’s detailed booklet for year 2023-24:</span>
+        </p>
+        <a class="link-btn" href="documents/Ahval-23-24.pdf" download>
+          <span class="mr">📄 २०२३-२४ अहवाल डाउनलोड करा</span><span class="en">📄 Download 2023-24 Booklet</span>
+        </a>
+        <p class="muted">
+          <span class="mr">पुढील वर्षाचा अहवाल लवकरच उपलब्ध होईल.</span>
+          <span class="en">The next year’s booklet will be uploaded soon.</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span class="mr">© २००३ – २०२६ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.</span>
+    <span class="en">© 2003 – 2026 Shree Swami Samarth Mitra Mandal. All Rights Reserved.</span>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-
-    const accordions = document.getElementsByClassName("accordion");
-    for (let i = 0; i < accordions.length; i++) {
-      accordions[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        let panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
-          panel.style.display = "none";
-        } else {
-          panel.style.display = "block";
-        }
-      });
-    }
-  </script>
 
 </body>
 

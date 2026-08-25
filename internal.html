@@ -1,277 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Karyakarta Login - Shree Swami Samarth Mitra Mandal</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            background: #f9f3e9;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        header {
-            background: #ff9933;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-
-        .logo {
-            width: 120px;
-            display: block;
-            margin: 0 auto 10px;
-        }
-
-        nav {
-            background: #cc7a00;
-            padding: 12px;
-            text-align: center;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        nav a {
-            color: white;
-            padding: 8px 12px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #ffd699;
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: scale(1.1);
-        }
-
-        .menu-toggle {
-            display: none;
-            font-size: 26px;
-            cursor: pointer;
-            color: white;
-            padding: 8px 12px;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 40px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        input[type="password"],
-        input[type="text"] {
-            width: 90%;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        button {
-            padding: 10px 20px;
-            background: #cc7a00;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            margin-top: 15px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #ff9933;
-        }
-
-        .details-box {
-            margin-top: 20px;
-            text-align: left;
-        }
-
-        .details-box .entry {
-            background: #fff;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .details-box p {
-            margin: 6px 0;
-        }
-
-        a.form-link {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 16px;
-            color: #cc7a00;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        a.form-link:hover {
-            color: #ff9933;
-        }
-
-        footer {
-            background: #ff9933;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-    </style>
+  <meta name="robots" content="noindex, nofollow">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Internal area for Shree Swami Samarth Mitra Mandal Karyakartas.">
+  <title>कार्यकर्ता लॉगिन | Karyakarta Login — Shree Swami Samarth Mitra Mandal</title>
+  <link rel="icon" href="images/swami_logo-removebg-preview.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    /* keep in sync with assets/lang-boot.js — inlined to avoid a language flash */
+    (function () {
+      var q = /[?&]lang=(en|mr)/.exec(location.search);
+      var l = q && q[1];
+      if (!l) { try { l = localStorage.getItem('sssmm-lang'); } catch (e) {} }
+      document.documentElement.lang = (l === 'en') ? 'en' : 'mr';
+    })();
+  </script>
+  <script src="assets/site.js" defer></script>
 </head>
 
 <body>
 
-    <header>
-        <img src="images/swami_logo-removebg-preview.png" alt="Mandal Logo" class="logo">
-        <h1>Shree Swami Samarth Mitra Mandal</h1>
-        <h4>Registration No. - Maha.741/2003/Pune</h4>
-        <h3>Established - 13 June 2003</h3>
-    </header>
+  <header class="site-header">
+    <img src="images/swami_logo-removebg-preview.png" alt="" class="logo" width="96" height="96">
+    <h1><span class="mr">श्री स्वामी समर्थ मित्र मंडळ</span><span class="en">Shree Swami Samarth Mitra Mandal</span></h1>
+    <p class="meta">
+      <span class="mr">नोंदणी क्र. महा.७४१/२००३/पुणे &nbsp;·&nbsp; स्थापना १३ जून २००३</span>
+      <span class="en">Reg. No. Maha.741/2003/Pune &nbsp;·&nbsp; Established 13 June 2003</span>
+    </p>
+  </header>
 
-    <nav>
-        <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
-        <div class="nav-links" id="navLinks">
-            <a href="index-english.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="contact.html">Contact & Donate</a>
-            <a href="internal.html">Karyakarta Login</a>
-            <a href="index.html" style="float:right;">मराठी</a>
-        </div>
-    </nav>
-
-    <div class="container" id="login-box">
-        <h2>Enter Access Code</h2>
-        <input type="password" id="accessCode" placeholder="Enter password">
-        <br>
-        <button onclick="checkPassword()">Submit</button>
+  <nav class="site-nav">
+    <div class="wrap">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="mr">☰ मेन्यू</span><span class="en">☰ Menu</span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html"><span class="mr">मुख्यपृष्ठ</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="mr">आमच्याबद्दल</span><span class="en">About Us</span></a>
+        <a href="gallery.html"><span class="mr">गॅलरी</span><span class="en">Gallery</span></a>
+        <a href="contact.html"><span class="mr">संपर्क व देणगी</span><span class="en">Contact &amp; Donate</span></a>
+        <a href="internal.html" aria-current="page"><span class="mr">कार्यकर्ता लॉगिन</span><span class="en">Karyakarta Login</span></a>
+      </div>
+      <button id="langToggle" type="button">English</button>
     </div>
+  </nav>
 
-    <div class="container" id="form-links" style="display: none;">
-        <h2>Forms for 2025</h2>
-        <a class="form-link" href="https://forms.gle/QnQzCDJRQm1u6nqm7" target="_blank">Donation 2025 Form</a>
-        <br>
-        <a class="form-link" href="https://forms.gle/RexZgH51ThH3fm1J8" target="_blank">Expenditure 2025 Form</a>
+  <section>
+    <div class="wrap">
+      <h2 class="title"><span class="mr">कार्यकर्ता लॉगिन</span><span class="en">Karyakarta Login</span></h2>
+      <div class="rule"></div>
 
-        <h2 style="margin-top: 40px;">Search & Edit Donation Details</h2>
-
-        <p style="font-style: italic; color: #555; margin-bottom: 5px;">
-            Search by any one of the following:
+      <!-- Gate. The code is NOT stored in this page; it is verified by the
+           Apps Script web app, which refuses to return donor data without it. -->
+      <div class="card center" id="loginBox">
+        <p class="muted">
+          <span class="mr">हा भाग केवळ मंडळाच्या कार्यकर्त्यांसाठी आहे.</span>
+          <span class="en">This section is for Mandal Karyakartas only.</span>
         </p>
+        <form id="loginForm" autocomplete="off">
+          <input type="password" id="accessCode" aria-label="Access code"
+                 placeholder="प्रवेश कोड / Access code">
+          <button class="btn" type="submit"><span class="mr">प्रवेश करा</span><span class="en">Enter</span></button>
+        </form>
+        <p class="msg" id="loginMsg" role="status" aria-live="polite"></p>
+      </div>
 
-        <input type="text" id="receiptSearch" placeholder="🔎 Receipt Number">
-        <p style="text-align:center; margin: 5px 0;">or</p>
+      <div id="panel" hidden>
+        <div class="card center">
+          <h3><span class="mr">फॉर्म</span><span class="en">Forms</span></h3>
+          <!-- TODO: swap in the 2026 donation/expenditure form links when available.
+               These are still the forms currently in use. -->
+          <a class="link-btn" href="https://forms.gle/QnQzCDJRQm1u6nqm7" target="_blank" rel="noopener">
+            <span class="mr">देणगी फॉर्म</span><span class="en">Donation Form</span>
+          </a>
+          <a class="link-btn" href="https://forms.gle/RexZgH51ThH3fm1J8" target="_blank" rel="noopener">
+            <span class="mr">खर्च फॉर्म</span><span class="en">Expenditure Form</span>
+          </a>
+        </div>
 
-        <input type="text" id="nameSearch" placeholder="🔎 Donor Name">
-        <p style="text-align:center; margin: 5px 0;">or</p>
-
-        <input type="text" id="mobileSearch" placeholder="🔎 Mobile Number">
-        <br>
-
-        <button onclick="searchDetails()">Search</button>
-        <div id="detailsBox" class="details-box"></div>
+        <div class="card center">
+          <h3><span class="mr">देणगी तपशील शोधा व संपादित करा</span><span class="en">Search &amp; Edit Donation Details</span></h3>
+          <p class="muted">
+            <span class="mr">खालीलपैकी कोणत्याही एका माहितीने शोधा:</span>
+            <span class="en">Search by any one of the following:</span>
+          </p>
+          <form id="searchForm" autocomplete="off">
+            <input type="text" id="receiptSearch" aria-label="Receipt number" placeholder="🔎 पावती क्रमांक / Receipt Number">
+            <input type="text" id="nameSearch" aria-label="Donor name" placeholder="🔎 देणगीदाराचे नाव / Donor Name">
+            <input type="text" id="mobileSearch" inputmode="numeric" aria-label="Mobile number" placeholder="🔎 मोबाईल क्रमांक / Mobile Number">
+            <button class="btn" type="submit"><span class="mr">शोधा</span><span class="en">Search</span></button>
+          </form>
+          <p class="msg" id="searchMsg" role="status" aria-live="polite"></p>
+          <div id="results"></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        &copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.
-    </footer>
+  <script>
+    (function () {
+      var t = function (mr, en) { return document.documentElement.lang === 'mr' ? mr : en; };
+      var KEY = 'sssmm-code';
+      var loginBox = document.getElementById('loginBox');
+      var loginForm = document.getElementById('loginForm');
+      var loginMsg = document.getElementById('loginMsg');
+      var codeInput = document.getElementById('accessCode');
+      var panel = document.getElementById('panel');
+      var results = document.getElementById('results');
+      var searchMsg = document.getElementById('searchMsg');
+      var searchForm = document.getElementById('searchForm');
 
-    <script>
-        function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
+      // Held for this tab only so a Karyakarta types the code once per session.
+      var code = '';
+      try { code = sessionStorage.getItem(KEY) || ''; } catch (e) {}
+
+      function unlock() {
+        loginBox.hidden = true;
+        panel.hidden = false;
+      }
+
+      if (code) unlock();
+
+      loginForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var entered = codeInput.value.trim();
+        var btn = loginForm.querySelector('button');
+        if (!entered) return;
+
+        loginMsg.className = 'msg';
+        loginMsg.textContent = t('तपासत आहे…', 'Checking…');
+        btn.disabled = true;
+
+        // The server decides. A wrong code never gets any donation data back.
+        window.apiGet({ code: entered, validate: 1 })
+          .then(function () {
+            code = entered;
+            try { sessionStorage.setItem(KEY, code); } catch (e) {}
+            codeInput.value = '';
+            loginMsg.textContent = '';
+            unlock();
+          })
+          .catch(function () {
+            loginMsg.className = 'msg err';
+            loginMsg.textContent = t('चुकीचा कोड. पुन्हा प्रयत्न करा.', 'Incorrect code. Please try again.');
+          })
+          .then(function () { btn.disabled = false; });
+      });
+
+      function lockOut() {
+        try { sessionStorage.removeItem(KEY); } catch (e) {}
+        code = '';
+        panel.hidden = true;
+        loginBox.hidden = false;
+        loginMsg.className = 'msg err';
+        loginMsg.textContent = t('सत्र संपले. कृपया पुन्हा कोड टाका.', 'Session expired. Please enter the code again.');
+      }
+
+      var esc = function (s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      };
+
+      function row(label, value) {
+        if (!value) return '';
+        return '<dt>' + label + '</dt><dd>' + esc(value) + '</dd>';
+      }
+
+      function render(list) {
+        results.innerHTML = list.map(function (e) {
+          var paid = /बाकी|pending|unpaid/i.test(e.Status || '') ? 'status-pending' : 'status-paid';
+          var link = /^https?:\/\//.test(e.EditLink || '')
+            ? '<a class="link-btn" style="margin-top:12px" href="' + esc(e.EditLink) + '" target="_blank" rel="noopener">'
+              + t('ही नोंद संपादित करा', 'Edit This Entry') + '</a>'
+            : '<p class="muted">' + t('संपादन लिंक उपलब्ध नाही.', 'No edit link available.') + '</p>';
+          return '<div class="entry"><dl>'
+            + row(t('पावती क्रमांक', 'Receipt Number'), e.ReceiptNumber)
+            + row(t('दिनांक', 'Date'), e.Date)
+            + row(t('नाव', 'Name'), e.Name)
+            + row(t('मोबाईल', 'Mobile'), e.Mobile)
+            + row(t('रक्कम', 'Amount'), e.Amount ? '₹' + e.Amount : '')
+            + row(t('स्वीकर्ता', 'Receiver'), e.Receiver)
+            + '<dt>' + t('स्थिती', 'Status') + '</dt><dd class="' + paid + '">' + esc(e.Status || '—') + '</dd>'
+            + row(t('देणगीची तारीख', 'Donation Date'), e.DonationDate)
+            + row(t('नोंद', 'Remark'), e.Remark)
+            + '</dl>' + link + '</div>';
+        }).join('');
+      }
+
+      searchForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var receipt = document.getElementById('receiptSearch').value.trim();
+        var name = document.getElementById('nameSearch').value.trim();
+        var mobile = document.getElementById('mobileSearch').value.trim();
+        var btn = searchForm.querySelector('button');
+
+        results.innerHTML = '';
+        searchMsg.className = 'msg';
+
+        if (!receipt && !name && !mobile) {
+          searchMsg.className = 'msg err';
+          searchMsg.textContent = t('कृपया किमान एक माहिती भरा.', 'Please enter at least one search criteria.');
+          return;
         }
 
-        function checkPassword() {
-            const code = document.getElementById("accessCode").value;
-            if (code === "1010") {
-                document.getElementById("login-box").style.display = "none";
-                document.getElementById("form-links").style.display = "block";
-            } else {
-                alert("Incorrect code. Please try again.");
-            }
-        }
+        searchMsg.textContent = t('शोधत आहे…', 'Loading…');
+        btn.disabled = true;
 
-        function searchDetails() {
-            const receipt = document.getElementById("receiptSearch").value.trim();
-            const name = document.getElementById("nameSearch").value.trim();
-            const mobile = document.getElementById("mobileSearch").value.trim();
-            const box = document.getElementById("detailsBox");
-            box.innerHTML = "Loading...";
+        window.apiGet({ code: code, receipt: receipt, name: name, mobile: mobile })
+          .then(function (data) {
+            if (!Array.isArray(data) || !data.length) throw new Error(t('नोंद सापडली नाही.', 'No matching record found.'));
+            render(data);
+            searchMsg.textContent = t(data.length + ' नोंदी सापडल्या', data.length + ' record(s) found');
+            searchMsg.className = 'msg ok';
+          })
+          .catch(function (err) {
+            if (/unauthor/i.test(err.message)) return lockOut();
+            searchMsg.className = 'msg err';
+            searchMsg.textContent = '❌ ' + err.message;
+          })
+          .then(function () { btn.disabled = false; });
+      });
+    })();
+  </script>
 
-            if (!receipt && !name && !mobile) {
-                box.innerHTML = "Please enter at least one search criteria.";
-                return;
-            }
-
-            let url = "https://script.google.com/macros/s/AKfycbymKcKWB-KAnyWupv_jGfMaz-aMt7ACx1qFMN7XtHkbocqHwj0KLzTosO6GslBC2u09/exec?";
-            if (receipt) url += "receipt=" + encodeURIComponent(receipt) + "&";
-            if (name) url += "name=" + encodeURIComponent(name) + "&";
-            if (mobile) url += "mobile=" + encodeURIComponent(mobile);
-
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.error) {
-                        box.innerHTML = "❌ " + data.error;
-                    } else if (Array.isArray(data)) {
-                        box.innerHTML = "";
-                        data.forEach(entry => {
-                            const editLinkHTML = entry.EditLink && entry.EditLink.startsWith("http")
-                                ? `<a class="form-link" href="${entry.EditLink}" target="_blank">Edit This Entry</a>`
-                                : "<p>No edit link available.</p>";
-
-                            box.innerHTML += `
-                <div class="entry">
-                  <p><strong>Receipt Number:</strong> ${entry.ReceiptNumber}</p>
-                  <p><strong>Date:</strong> ${entry.Date}</p>
-                  <p><strong>Name:</strong> ${entry.Name}</p>
-                  <p><strong>Mobile:</strong> ${entry.Mobile}</p>
-                  <p><strong>Amount:</strong> ₹${entry.Amount}</p>
-                  <p><strong>Receiver:</strong> ${entry.Receiver}</p>
-                  <p><strong>Status:</strong> ${entry.Status}</p>
-                  ${editLinkHTML}
-                </div>
-              `;
-                        });
-                    }
-                })
-                .catch(error => {
-                    box.innerHTML = "Error fetching data.";
-                });
-        }
-    </script>
+  <footer class="site-footer">
+    <span class="mr">© २००३ – २०२६ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.</span>
+    <span class="en">© 2003 – 2026 Shree Swami Samarth Mitra Mandal. All Rights Reserved.</span>
+  </footer>
 
 </body>
 

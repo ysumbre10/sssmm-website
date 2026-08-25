@@ -1,164 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="mr">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery - Shree Swami Samarth Mitra Mandal</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f9f3e9;
-      color: #333;
-    }
-
-    header {
-      background: #ff9933;
-      color: white;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 120px;
-      display: block;
-      margin: 0 auto 10px;
-    }
-
-    nav {
-      background: #cc7a00;
-      padding: 12px;
-      text-align: center;
-    }
-
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    nav a {
-      color: white;
-      padding: 8px 12px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, transform 0.3s;
-      border-radius: 5px;
-    }
-
-    nav a:hover {
-      color: #ffd699;
-      background-color: rgba(255, 255, 255, 0.1);
-      transform: scale(1.1);
-    }
-
-    .menu-toggle {
-      display: none;
-      font-size: 26px;
-      cursor: pointer;
-      color: white;
-      padding: 8px 12px;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 20px;
-      text-align: center;
-    }
-
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.4s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .video-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .video-container iframe {
-      margin: 10px;
-      width: 100%;
-      max-width: 300px;
-      height: 200px;
-    }
-
-    footer {
-      background: #ff9933;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 768px) {
-      .nav-links {
-        display: none;
-        flex-direction: column;
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Photo and video gallery of aarti, bhajans and festival celebrations at Shree Swami Samarth Mitra Mandal.">
+  <title>गॅलरी | Gallery — Shree Swami Samarth Mitra Mandal</title>
+  <link rel="icon" href="images/swami_logo-removebg-preview.png">
+  <link rel="stylesheet" href="assets/style.css">
+  <script>
+    /* keep in sync with assets/lang-boot.js — inlined to avoid a language flash */
+    (function () {
+      var q = /[?&]lang=(en|mr)/.exec(location.search);
+      var l = q && q[1];
+      if (!l) { try { l = localStorage.getItem('sssmm-lang'); } catch (e) {} }
+      document.documentElement.lang = (l === 'en') ? 'en' : 'mr';
+    })();
+  </script>
+  <script src="assets/site.js" defer></script>
 </head>
 
 <body>
 
-  <header>
-    <img src="images/swami_logo-removebg-preview.png" alt="Mandal Logo" class="logo">
-    <h1>Photo & Video Gallery</h1>
+  <header class="site-header">
+    <img src="images/swami_logo-removebg-preview.png" alt="" class="logo" width="96" height="96">
+    <h1><span class="mr">श्री स्वामी समर्थ मित्र मंडळ</span><span class="en">Shree Swami Samarth Mitra Mandal</span></h1>
+    <p class="meta">
+      <span class="mr">नोंदणी क्र. महा.७४१/२००३/पुणे &nbsp;·&nbsp; स्थापना १३ जून २००३</span>
+      <span class="en">Reg. No. Maha.741/2003/Pune &nbsp;·&nbsp; Established 13 June 2003</span>
+    </p>
   </header>
 
-  <nav>
-    <span class="menu-toggle" onclick="toggleMenu()">☰ Menu</span>
-    <div class="nav-links" id="navLinks">
-      <a href="index-english.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact & Donate</a>
-      <a href="internal.html">Karyakarta Login</a>
-      <a href="index.html" style="float:right;">मराठी</a>
+  <nav class="site-nav">
+    <div class="wrap">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="navLinks">
+        <span class="mr">☰ मेन्यू</span><span class="en">☰ Menu</span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html"><span class="mr">मुख्यपृष्ठ</span><span class="en">Home</span></a>
+        <a href="about.html"><span class="mr">आमच्याबद्दल</span><span class="en">About Us</span></a>
+        <a href="gallery.html" aria-current="page"><span class="mr">गॅलरी</span><span class="en">Gallery</span></a>
+        <a href="contact.html"><span class="mr">संपर्क व देणगी</span><span class="en">Contact &amp; Donate</span></a>
+        <a href="internal.html"><span class="mr">कार्यकर्ता लॉगिन</span><span class="en">Karyakarta Login</span></a>
+      </div>
+      <button id="langToggle" type="button">English</button>
     </div>
   </nav>
 
-  <section>
-    <h2>Aarti and Bhajans</h2>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/w0W8Wh-8UCg?si=1nCnu-rsgMy2zpF3" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/dcJv2RiUc0k?si=_oVojj_i1rXdd9A7" frameborder="0" allowfullscreen></iframe>
-      <iframe src="https://www.youtube.com/embed/OJKuNYsPMVU?si=ImzKQ5a1Hftf7871" frameborder="0" allowfullscreen></iframe>
-      <!-- Add more YouTube video embeds as needed -->
+  <section class="reveal">
+    <div class="wrap">
+      <h2 class="title"><span class="mr">आरती आणि भजन</span><span class="en">Aarti and Bhajans</span></h2>
+      <div class="rule"></div>
+      <p class="lede">
+        <span class="mr">मंडळाच्या उत्सवातील काही क्षण</span>
+        <span class="en">A few moments from our Mandal’s celebrations</span>
+      </p>
+      <div class="videos">
+        <div class="frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/w0W8Wh-8UCg" title="Aarti and bhajan"
+                  loading="lazy" allowfullscreen
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <div class="frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/dcJv2RiUc0k" title="Aarti and bhajan"
+                  loading="lazy" allowfullscreen
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+        <div class="frame">
+          <iframe src="https://www.youtube-nocookie.com/embed/OJKuNYsPMVU" title="Aarti and bhajan"
+                  loading="lazy" allowfullscreen
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer>
-    &copy; 2003 - 2025 Shree Swami Samarth Mitra Mandal. All Rights Reserved.
+  <footer class="site-footer">
+    <span class="mr">© २००३ – २०२६ श्री स्वामी समर्थ मित्र मंडळ. सर्व हक्क राखीव.</span>
+    <span class="en">© 2003 – 2026 Shree Swami Samarth Mitra Mandal. All Rights Reserved.</span>
   </footer>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById('navLinks').classList.toggle('active');
-    }
-  </script>
 
 </body>
 
